@@ -1,0 +1,33 @@
+.wallet-connect-button {
+  width: 200px;
+  height: 50px;
+}
+
+.WalletSelect-content {
+  display: flex;
+  padding: 20px;
+  margin: 10px 0px;
+  width: 100%;
+  border-radius: 15px;
+}
+
+.WalletSelect-content:hover {
+  cursor: pointer;
+  background-color: rgba(128, 128, 128, 0.1);
+}
+
+.WalletSelect-contect-icon {
+  width: 50px;
+}
+
+.WalletSelect-contect-icon img {
+  width: 40px;
+}
+
+.WalletSelect-contect-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: "GmarketSansTTFBold", serif;
+  margin-left: 15px;
+}
