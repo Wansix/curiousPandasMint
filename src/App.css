@@ -1,7 +1,9 @@
 @import "./css/main.css";
 @import "./css/mintPage.css";
 @import "./css/wallectConnect.css";
+@import url("https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&family=Nanum+Gothic:wght@400;700;800&display=swap");
 
 .App {
-  font-family: "GmarketSansTTFBold", serif;
+  /* font-family: "GmarketSansTTFBold", serif; */
+  font-family: "Nanum Gothic", sans-serif;
 }

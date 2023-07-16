@@ -278,7 +278,7 @@ export const MintPage = () => {
       setMintCount(Number(_saleTotalAmount) - Number(_remainCount));
 
       const _maxTx = await readContract.getMaxPerTx(mintIndex);
-      setMaxTx(_maxTx);
+      setMaxTx(Number(_maxTx));
 
       const _maxPerWallet = await readContract.getMaxPerWallet(mintIndex);
       setMaxPerWallet(Number(_maxPerWallet));
@@ -340,6 +340,23 @@ export const MintPage = () => {
           <div className="mintPage_main_left-content">
             <img src="https://lh3.googleusercontent.com/RV0mMHqAGw1gUJXOFZxueJtlaesy5KX8yPd2cEvhglV8UCI8eePMLm3Ja_sI7aPj8j3ezVfUcWZgHiHu4Q70adhGINcrh02p4zENZxX9E7gsa9pY_0DkUA=s0"></img>
           </div>
+          <div className="mintPage_main_left-content">
+            <div className="mintPage_main_left-content_description-box">
+              <div className="mintPage_main_left-content_description-text">
+                확정 WL라운드 - 트랜잭션당 1개, 지갑당 1개
+              </div>
+              <div className="mintPage_main_left-content_description-text">
+                경쟁 WL라운드 - 트랜잭션당 1개, 지갑당 2개
+              </div>
+              <div className="mintPage_main_left-content_description-text">
+                퍼블릭 라운드 - 트랙잭션당 1개, 지갑당 2개
+              </div>
+              <div className="mintPage_main_left-content_description-text">
+                1st 물량은 500개. 팀물량 500개이며 남은 2000개의 물량은 마케팅,
+                민팅용으로 사용될 수 있습니다.
+              </div>
+            </div>
+          </div>
         </div>
         <div className="mintPage_main">
           <div className="mintPage_main-content mintPage_title-container">
@@ -348,12 +365,15 @@ export const MintPage = () => {
                 Round {mintIndex + 1} : {mintPhaseString}
               </span>
             </div>
+            <div className="mintPage_main-content-round-maxMintInfo">
+              <span>
+                트랜잭션 당 개수 - {maxTx}, 지갑당 최대 민팅 가능 -{" "}
+                {maxPerWallet}
+              </span>
+            </div>
             <div className="mintPage_main-content-title">
               <span>Curious Pandas</span>
             </div>
-            {/* <div>
-              <span>Stage 지갑당 최대 민팅 가능 - {maxPerWallet}</span>
-            </div> */}
           </div>
           <div className="mintPage_main-content">
             <div className="mintPage_blockHeight-container">
@@ -417,7 +437,11 @@ export const MintPage = () => {
               >
                 <span>-</span>
               </div> */}
-              <Button variant="success" onClick={onClickMinus}>
+              <Button
+                className="mintAmountButton"
+                variant="success"
+                onClick={onClickMinus}
+              >
                 -
               </Button>
               <div className="mintPage_mintAmount-amount">
@@ -429,7 +453,11 @@ export const MintPage = () => {
               >
                 <span>+</span>
               </div> */}
-              <Button variant="success" onClick={onClickPlus}>
+              <Button
+                className="mintAmountButton"
+                variant="success"
+                onClick={onClickPlus}
+              >
                 +
               </Button>
             </div>
@@ -446,9 +474,9 @@ export const MintPage = () => {
             </div>
           </div>
 
-          <div className="mintPage_main-content">
+          {/* <div className="mintPage_main-content">
             <div>My NFT 개수 - {balanceNFT}</div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
