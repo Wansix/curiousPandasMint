@@ -241,7 +241,7 @@
   border-radius: 15px;
   padding: 20px 40px;
 
-  /* border: 10px solid #61be32; */
+  border: 1px solid yellowgreen;
 }
 .mintPage_main_left-content_description-text {
   margin-top: 25px;
@@ -253,6 +253,7 @@
   margin-bottom: 25px;
   font-size: 14px;
   font-weight: 800;
+  color: yellowgreen;
 }
 
 .progress {
