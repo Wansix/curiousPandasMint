@@ -4,6 +4,24 @@
   font-weight: normal;
 }
 
+@font-face {
+  font-family: "GongGothicBold";
+  src: url("../fonts/Gong\ Gothic\ Bold.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "GongGothicLight";
+  src: url("../fonts/Gong\ Gothic\ Light.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "GongGothicMedium";
+  src: url("../fonts/Gong\ Gothic\ Medium.ttf") format("truetype");
+  font-weight: normal;
+}
+
 /* .tt {
   font-size: 30px;
   font-family: "GmarketSansTTFBold", serif;
@@ -83,7 +101,7 @@
 }
 .mintPage_main {
   width: 500px;
-  background-color: #ffdf00f2;
+  background-color: beige;
   padding: 20px;
   border-radius: 20px;
 }
@@ -112,6 +130,7 @@
 }
 
 .mintPage_main-content-round {
+  font-family: "GongGothicMedium";
   font-size: 20px;
   /* background-color: azure; */
   margin-bottom: 2px;
@@ -127,6 +146,7 @@
 
 .mintPage_main-content-title {
   /* background-color: aqua; */
+  font-family: "GongGothicBold";
   font-size: 45px;
   font-weight: 800;
   padding-bottom: 15px;
@@ -151,6 +171,7 @@
 }
 
 .mintPage_mintAmount-amount {
+  font-family: "GongGothicBold";
   margin: 0px 20px;
   display: flex;
   flex-direction: column;
@@ -173,6 +194,7 @@
 }
 
 .mintPage_blockHeight-number {
+  font-family: "GongGothicMedium";
   font-size: 20px;
   font-weight: 800;
 }
@@ -189,6 +211,7 @@
 }
 
 .mintPage_main-content_count-title {
+  font-family: "GongGothicMedium";
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
@@ -211,7 +234,7 @@
   width: 600px;
 }
 .mintPage_main_left-content_description-box {
-  background-color: #008000a1;
+  background-color: #0000004a;
   color: white;
   /* #FBA026 노랑 */
   margin-top: 20px;
@@ -222,7 +245,7 @@
 }
 .mintPage_main_left-content_description-text {
   margin-top: 25px;
-  font-size: 23px;
+  font-size: 20px;
   font-weight: 800;
 }
 
@@ -230,4 +253,8 @@
   margin-bottom: 25px;
   font-size: 14px;
   font-weight: 800;
+}
+
+.progress {
+  background-color: rgba(53, 104, 61, 0.103);
 }
