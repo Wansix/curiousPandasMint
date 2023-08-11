@@ -261,3 +261,15 @@
 .progress {
   background-color: rgba(53, 104, 61, 0.103);
 }
+
+.blockHeight-showTime {
+  margin-top: 2px;
+  opacity: 0.6;
+  font-size: 14px;
+}
+
+.adminContent {
+  width: 800px;
+  display: flex;
+  justify-content: space-between;
+}

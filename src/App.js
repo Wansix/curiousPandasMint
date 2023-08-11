@@ -3,6 +3,7 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MintPage from "./screens/MintPage";
 import Main from "./screens/Main";
+import { AdminBamboo } from "./screens/AdminBamboo";
 
 function App() {
   return (
@@ -11,6 +12,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Main></Main>}></Route>
           <Route path="/MintTest" element={<MintPage></MintPage>}></Route>
+          <Route
+            path="/AdminBamboo"
+            element={<AdminBamboo></AdminBamboo>}
+          ></Route>
         </Routes>
       </div>
     </Router>
