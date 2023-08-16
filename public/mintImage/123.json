@@ -1,0 +1,43 @@
+{
+  "name": "curiousPandas #23",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/23.png",
+  "dna": "409365ce95e76f48643600072460b99744ab8847",
+  "edition": 23,
+  "date": 1678759814936,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "brown"
+    },
+    {
+      "trait_type": "skin",
+      "value": "basic"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "wound"
+    },
+    {
+      "trait_type": "clothes",
+      "value": "none"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "silver glasses"
+    },
+    {
+      "trait_type": "hat",
+      "value": "gold ring"
+    },
+    {
+      "trait_type": "objects",
+      "value": "bamboo"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "bamboo leaf"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

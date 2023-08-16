@@ -1,0 +1,43 @@
+{
+  "name": "curiousPandas #62",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/62.png",
+  "dna": "38a02c81610b8ab8e2ea6c69c269cc51cb5418a6",
+  "edition": 62,
+  "date": 1678758103301,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "sky"
+    },
+    {
+      "trait_type": "skin",
+      "value": "ninza"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "round"
+    },
+    {
+      "trait_type": "clothes",
+      "value": "black T"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "none"
+    },
+    {
+      "trait_type": "hat",
+      "value": "crown"
+    },
+    {
+      "trait_type": "objects",
+      "value": "cotton candy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "cigarette"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

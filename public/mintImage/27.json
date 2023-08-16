@@ -1,0 +1,43 @@
+{
+  "name": "curiousPandas #27",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/27.png",
+  "dna": "c8ec096250247f074fe6acaef65f19dd3a02a135",
+  "edition": 27,
+  "date": 1678762732130,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "sky"
+    },
+    {
+      "trait_type": "skin",
+      "value": "basic"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "basic eyes"
+    },
+    {
+      "trait_type": "clothes",
+      "value": "none"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "silver monocle"
+    },
+    {
+      "trait_type": "hat",
+      "value": "none"
+    },
+    {
+      "trait_type": "objects",
+      "value": "cotton candy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "surprised"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

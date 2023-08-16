@@ -1,0 +1,43 @@
+{
+  "name": "curiousPandas #17",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/17.png",
+  "dna": "965be4bbfed607c7d80f33557ad6a4bebfdd1f95",
+  "edition": 17,
+  "date": 1678759808886,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "gray"
+    },
+    {
+      "trait_type": "skin",
+      "value": "gold"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "basic eyes"
+    },
+    {
+      "trait_type": "clothes",
+      "value": "rider"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "none"
+    },
+    {
+      "trait_type": "hat",
+      "value": "rabbit"
+    },
+    {
+      "trait_type": "objects",
+      "value": "meat"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "cigarette"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

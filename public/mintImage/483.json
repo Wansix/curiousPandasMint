@@ -1,0 +1,43 @@
+{
+  "name": "curiousPandas #83",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/83.png",
+  "dna": "abd5f1677ace4e876fe605aea262ace495e6f670",
+  "edition": 83,
+  "date": 1678760703152,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "purple"
+    },
+    {
+      "trait_type": "skin",
+      "value": "brown"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "angry"
+    },
+    {
+      "trait_type": "clothes",
+      "value": "rider"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "none"
+    },
+    {
+      "trait_type": "hat",
+      "value": "none"
+    },
+    {
+      "trait_type": "objects",
+      "value": "balloon"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "bamboo leaf"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

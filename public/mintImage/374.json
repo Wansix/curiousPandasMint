@@ -1,0 +1,43 @@
+{
+  "name": "curiousPandas #74",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/74.png",
+  "dna": "2639ba74dfa928c80f8cc5f16b15c91e99c9f495",
+  "edition": 74,
+  "date": 1678759741840,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "green"
+    },
+    {
+      "trait_type": "skin",
+      "value": "zombie"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sparkling"
+    },
+    {
+      "trait_type": "clothes",
+      "value": "mint T"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "none"
+    },
+    {
+      "trait_type": "hat",
+      "value": "gold ring"
+    },
+    {
+      "trait_type": "objects",
+      "value": "balloon"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "basic mouth"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}
