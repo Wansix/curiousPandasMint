@@ -120,7 +120,22 @@ export const AdminBamboo = () => {
 
   useEffect(() => {
     const init = async () => {
-      const _currentPhase = await readContract.getCurrentPhase();
+      const data = await readContract.getDatas();
+
+      const currentBlock = Number(data[0]);
+      const stage = Number(data[1]);
+      const currentPhase = data[2];
+      const totalNFTAmount = Number(data[3]);
+      const totalSaleNFTAmount = Number(data[4]);
+      const initSupply = Number(data[5]);
+      const saleTotalAmounts = data[6];
+      const saleRemainAmounts = data[7];
+      const maxPerWallet = data[8];
+      const maxPerTransaction = data[9];
+      const mintStartBlockNumber = data[10];
+      const mintEndBlockNumber = data[11];
+
+      const _currentPhase = currentBlock; //await readContract.getCurrentPhase();
       let phaseString;
       if (_currentPhase === 0) phaseString = "INIT";
       if (_currentPhase === 1) phaseString = "WHITELIST1";
@@ -132,23 +147,23 @@ export const AdminBamboo = () => {
 
       setCurrentPhase(phaseString);
 
-      const _totalNFTAmount = await contract.totalNFTAmount();
-      setTotalNFTAmount(Number(_totalNFTAmount));
+      // const _totalNFTAmount = await contract.totalNFTAmount();
+      setTotalNFTAmount(totalNFTAmount);
 
       const _totalSupply = await contract.totalSupply();
       setTotalSupply(Number(_totalSupply));
 
-      const _totalSaleNFTAmount = await contract.totalSaleNFTAmount();
-      setTotalSaleNFTAmount(Number(_totalSaleNFTAmount));
+      // const _totalSaleNFTAmount = await contract.totalSaleNFTAmount();
+      setTotalSaleNFTAmount(totalSaleNFTAmount);
 
       const _mintDeposit = await contract.mintDepositAddress();
       setMintDeposit(_mintDeposit);
 
-      const _initSupply = await contract.initSupply();
-      setInitSupply(Number(_initSupply));
+      // const _initSupply = await contract.initSupply();
+      setInitSupply(initSupply);
 
-      const _round = await contract.stage();
-      setRound(Number(_round));
+      // const _round = await contract.stage();
+      setRound(stage);
 
       let _saleTotalAmount = [];
       let _saleRemainAmount = [];
@@ -158,14 +173,22 @@ export const AdminBamboo = () => {
       let _mintEndBlockNumber = [];
       let _mintPrice = [];
       for (let i = 0; i < 3; i++) {
-        _saleTotalAmount.push(Number(await contract.saleTotalAmount(i)));
-        _saleRemainAmount.push(Number(await contract.saleRemainAmount(i)));
-        _maxPerWallet.push(Number(await contract.maxPerWallet(i)));
-        _maxPerTx.push(Number(await contract.maxPerTransaction(i)));
-        _mintStartBlockNumber.push(
-          Number(await contract.mintStartBlockNumber(i))
-        );
-        _mintEndBlockNumber.push(Number(await contract.mintEndBlockNumber(i)));
+        // _saleTotalAmount.push(Number(await contract.saleTotalAmount(i)));
+        // _saleRemainAmount.push(Number(await contract.saleRemainAmount(i)));
+        // _maxPerWallet.push(Number(await contract.maxPerWallet(i)));
+        // _maxPerTx.push(Number(await contract.maxPerTransaction(i)));
+        // _mintStartBlockNumber.push(
+        //   Number(await contract.mintStartBlockNumber(i))
+        // );
+        // _mintEndBlockNumber.push(Number(await contract.mintEndBlockNumber(i)));
+        // _mintPrice.push(Number(await contract.mintPriceList(i)));
+
+        _saleTotalAmount.push(Number(saleTotalAmounts[i]));
+        _saleRemainAmount.push(Number(saleRemainAmounts[i]));
+        _maxPerWallet.push(Number(maxPerWallet[i]));
+        _maxPerTx.push(Number(maxPerTransaction[i]));
+        _mintStartBlockNumber.push(Number(mintStartBlockNumber[i]));
+        _mintEndBlockNumber.push(Number(mintEndBlockNumber[i]));
         _mintPrice.push(Number(await contract.mintPriceList(i)));
       }
 

@@ -31,7 +31,7 @@ const getRandomEndPointMainnet = (r) => {
 };
 
 let endPoint;
-if (testFlag) endPoint = getRandomEndPointBaobab(randomNum);
+if (testFlag) endPoint = getRandomEndPointBaobab(0); //randomNum);
 else endPoint = getRandomEndPointMainnet(randomNum);
 
 console.log("endPoint : ", endPoint);
@@ -107,4 +107,12 @@ export const getTotalSupply = async () => {
 
 export const getStage = async () => {
   return await contract.stage();
+};
+
+export const getDatas = async () => {
+  return await contract.getDatas();
+};
+
+export const getMintInfo = async (_address) => {
+  return await contract.getMintInfo(_address);
 };

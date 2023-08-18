@@ -101,7 +101,7 @@ export const MintPage = () => {
     }
   };
 
-  const checkSaleAvailable = async () => {
+  const checkSaleAvailable = (_NFTCount) => {
     try {
       if (Number(mintCount) + Number(mintAmount) > Number(maxCount)) {
         Swal.fire({
@@ -112,10 +112,10 @@ export const MintPage = () => {
         return false;
       }
 
-      const NFTCount = await readContract.getNFTCountsList(mintIndex, account);
+      // const NFTCount = await readContract.getNFTCountsList(mintIndex, account);
       // console.log("maxPerWallet:", maxPerWallet);
 
-      if (Number(NFTCount) + Number(mintAmount) > maxPerWallet) {
+      if (Number(_NFTCount) + Number(mintAmount) > maxPerWallet) {
         Swal.fire({
           icon: "error",
           title: "buy error",
@@ -128,29 +128,33 @@ export const MintPage = () => {
     }
   };
 
-  const checkWhiteLists = async () => {
+  const checkWhiteLists = (_currentPhase, whitelist1, whitelist2) => {
     let response = true;
 
-    if (currentPhase === Phase.WHITELIST1) {
-      response = await readContract.checkWhitelist(0, account);
+    if (_currentPhase === Phase.WHITELIST1) {
+      response = whitelist1; // await readContract.checkWhitelist(0, account);
     }
-    if (currentPhase === Phase.WHITELIST2) {
-      response = await readContract.checkWhitelist(1, account);
+    if (_currentPhase === Phase.WHITELIST2) {
+      response = whitelist2; //await readContract.checkWhitelist(1, account);
     }
 
     return response;
   };
 
   // 민팅 가능한 block인지 확인.
-  const checkMintBlockNumber = async (_mintIndex) => {
-    const _currentBlock = await readContract.getBlockNumber();
-    const startBlockNumber = await readContract.getMintStartBlockNumber(
-      _mintIndex
-    );
-    const endBlockNumber = await readContract.getMintEndBlockNumber(_mintIndex);
+  const checkMintBlockNumber = (
+    currnetBlock,
+    startBlockNumber,
+    endBlockNumber
+  ) => {
+    // const _currentBlock = await readContract.getBlockNumber();
+    // const startBlockNumber = await readContract.getMintStartBlockNumber(
+    //   _mintIndex
+    // );
+    // const endBlockNumber = await readContract.getMintEndBlockNumber(_mintIndex);
 
-    if (startBlockNumber > _currentBlock) return false;
-    if (endBlockNumber < _currentBlock) return false;
+    if (startBlockNumber > currnetBlock) return false;
+    if (endBlockNumber < currnetBlock) return false;
 
     return true;
   };
@@ -158,47 +162,10 @@ export const MintPage = () => {
   const onClickMinting = async () => {
     try {
       if (contract) {
-        const _currentPhase = await readContract.getCurrentPhase();
+        const price = 0; //mintPrice; //await readContract.getMintPriceList(mintIndex);
 
-        if (
-          _currentPhase !== Phase.PUBLIC1 &&
-          _currentPhase !== Phase.WHITELIST1 &&
-          _currentPhase !== Phase.WHITELIST2
-        ) {
-          Swal.fire({
-            icon: "error",
-            title: "Not Mint stage",
-            text: "민팅 단계가 아닙니다.",
-          });
-          return;
-        }
-        const isMintAvailableTime = await checkMintBlockNumber(mintIndex);
-
-        if (!isMintAvailableTime) {
-          Swal.fire({
-            icon: "error",
-            title: "It's not a mintable block height",
-            text: "민팅 가능 블록 높이가 아닙니다.",
-          });
-          return;
-        }
-        const isWhiteList = await checkWhiteLists();
-        if (isWhiteList === false) {
-          Swal.fire({
-            icon: "error",
-            title: "Not Whitelist",
-            text: "화이트리스트가 아닙니다.",
-          });
-          return;
-        }
-        const saleAvailable = await checkSaleAvailable();
-        if (saleAvailable === false) {
-          return;
-        }
-
-        const price = await readContract.getMintPriceList(mintIndex);
-
-        const klayBalance = await readContract.balanceOfKlay(account);
+        const klayBalance = await provider.getBalance(account);
+        // const klayBalance = await readContract.balanceOfKlay(account);
         const totalPrice = Number(price) * Number(mintAmount);
         if (totalPrice > Number(klayBalance)) {
           Swal.fire({
@@ -214,14 +181,14 @@ export const MintPage = () => {
         });
 
         console.log("tx : ", tx);
-        if (tx) {
-          const _remainCount = await readContract.getRemainCount(mintIndex);
-          setRemainCount(Number(_remainCount));
-          // const _totalAmount = await readContract.getTotalSupply();
-          setMintCount(maxCount - Number(_remainCount));
-          const _balanceNFT = await readContract.balanceOf(account);
-          setBalanceNFT(Number(_balanceNFT));
-        }
+        // if (tx) {
+        //   const _remainCount = await readContract.getRemainCount(mintIndex);
+        //   setRemainCount(Number(_remainCount));
+        //   // const _totalAmount = await readContract.getTotalSupply();
+        //   // setMintCount(maxCount - Number(_remainCount));
+        //   // const _balanceNFT = await readContract.balanceOf(account);
+        //   // setBalanceNFT(Number(_balanceNFT));
+        // }
       } else {
         Swal.fire({
           icon: "error",
@@ -230,7 +197,77 @@ export const MintPage = () => {
         });
       }
     } catch (error) {
-      console.log(error);
+      const data = await readContract.getDatas();
+
+      const currentBlock = Number(data[0]);
+      const stage = Number(data[1]);
+      const currentPhase = data[2];
+      const totalNFTAmount = Number(data[3]);
+      const totalSaleNFTAmount = Number(data[4]);
+      const initSupply = Number(data[5]);
+      const saleTotalAmounts = data[6];
+      const saleRemainAmounts = data[7];
+      const maxPerWallet = data[8];
+      const maxPerTransaction = data[9];
+      const mintStartBlockNumber = data[10];
+      const mintEndBlockNumber = data[11];
+
+      const mintInfo = await readContract.getMintInfo(account);
+
+      const mintPrice = mintInfo[0];
+      const NFTCount = mintInfo[1];
+      const isWhitelist1 = mintInfo[2];
+      const isWhitelist2 = mintInfo[3];
+
+      // const _currentPhase = await readContract.getCurrentPhase();
+
+      const _mintIndex = getMintIndex(currentPhase);
+
+      if (
+        currentPhase !== Phase.PUBLIC1 &&
+        currentPhase !== Phase.WHITELIST1 &&
+        currentPhase !== Phase.WHITELIST2
+      ) {
+        Swal.fire({
+          icon: "error",
+          title: "Not Mint stage",
+          text: "민팅 단계가 아닙니다.",
+        });
+        return;
+      }
+      const isMintAvailableTime = checkMintBlockNumber(
+        currentBlock,
+        Number(mintStartBlockNumber[_mintIndex]),
+        Number(mintEndBlockNumber[_mintIndex])
+      );
+
+      if (!isMintAvailableTime) {
+        Swal.fire({
+          icon: "error",
+          title: "It's not a mintable block height",
+          text: "민팅 가능 블록 높이가 아닙니다.",
+        });
+        return;
+      }
+      const isWhiteList = checkWhiteLists(
+        currentPhase,
+        isWhitelist1,
+        isWhitelist2
+      );
+      if (isWhiteList === false) {
+        Swal.fire({
+          icon: "error",
+          title: "Not Whitelist",
+          text: "화이트리스트가 아닙니다.",
+        });
+        return;
+      }
+      const saleAvailable = checkSaleAvailable(NFTCount);
+      if (saleAvailable === false) {
+        return;
+      }
+
+      console.log("mint error", error);
     }
   };
 
@@ -294,54 +331,84 @@ export const MintPage = () => {
   };
 
   const initPage = async () => {
-    const _currentPhase = await _setCurrentPhase();
-    const _mintIndex = getMintIndex(_currentPhase);
-    readContract
-      .getMintStartBlockNumber(_mintIndex)
-      .then((_startBlockNumber) => {
-        setStartBlockNumber(_startBlockNumber.toString());
-      });
+    try {
+      const data = await readContract.getDatas();
+      const currentBlock = Number(data[0]);
+      const stage = Number(data[1]);
+      const currentPhase = data[2];
+      const totalNFTAmount = Number(data[3]);
+      const totalSaleNFTAmount = Number(data[4]);
+      const initSupply = Number(data[5]);
+      const saleTotalAmounts = data[6];
+      const saleRemainAmounts = data[7];
+      const maxPerWallet = data[8];
+      const maxPerTransaction = data[9];
+      const mintStartBlockNumber = data[10];
+      const mintEndBlockNumber = data[11];
 
-    readContract.getMintEndBlockNumber(_mintIndex).then((_endBlockNumber) => {
-      setEndBlockNumber(_endBlockNumber.toString());
-    });
+      setCurrentBlockNumber(currentBlock);
 
-    setMintIndex(_mintIndex); // whitelis1, whitelist2, public
+      // const _currentPhase = await _setCurrentPhase();
+      setCurrentPhase(currentPhase);
+      const _mintIndex = getMintIndex(currentPhase);
 
-    const _mintPhaseString = getPhaseString(_currentPhase);
-    setMintPhaseString(_mintPhaseString);
+      setStartBlockNumber(mintStartBlockNumber[_mintIndex].toString());
+      setEndBlockNumber(mintEndBlockNumber[_mintIndex].toString());
 
-    const [_saleTotalAmount, _remainCount, _maxTx, _maxPerWallet] =
-      await Promise.all([
-        readContract.getSaleTotalAmount(_mintIndex),
-        readContract.getRemainCount(_mintIndex),
-        readContract.getMaxPerTx(_mintIndex),
-        readContract.getMaxPerWallet(_mintIndex),
-      ]);
+      // readContract
+      //   .getMintStartBlockNumber(_mintIndex)
+      //   .then((_startBlockNumber) => {
+      //     setStartBlockNumber(_startBlockNumber.toString());
+      //   });
 
-    setMaxCount(Number(_saleTotalAmount));
-    setRemainCount(Number(_remainCount));
+      // readContract.getMintEndBlockNumber(_mintIndex).then((_endBlockNumber) => {
+      //   setEndBlockNumber(_endBlockNumber.toString());
+      // });
 
-    setMintCount(Number(_saleTotalAmount) - Number(_remainCount));
-    setMaxTx(Number(_maxTx));
-    setMaxPerWallet(Number(_maxPerWallet));
+      setMintIndex(_mintIndex); // whitelis1, whitelist2, public
 
-    // const _mintState = await getMintState(_currentPhase, _mintIndex);
-    // setMintState(_mintState); // true, false
+      const _mintPhaseString = getPhaseString(currentPhase);
+      setMintPhaseString(_mintPhaseString);
+
+      // const [_saleTotalAmount, _remainCount, _maxTx, _maxPerWallet] =
+      //   await Promise.all([
+      // readContract.getSaleTotalAmount(_mintIndex),
+      // readContract.getRemainCount(_mintIndex),
+      //     readContract.getMaxPerTx(_mintIndex),
+      //     readContract.getMaxPerWallet(_mintIndex),
+      //   ]);
+
+      const saleTotalAmount = Number(saleTotalAmounts[_mintIndex]);
+      const saleRemainAmount = Number(saleRemainAmounts[_mintIndex]);
+
+      setMaxCount(saleTotalAmount);
+      setRemainCount(saleRemainAmount);
+      setMintCount(saleTotalAmount - saleRemainAmount);
+      setMaxPerWallet(Number(maxPerTransaction[_mintIndex]));
+      setMaxTx(Number(maxPerWallet[_mintIndex]));
+
+      // setMaxCount(Number(_saleTotalAmount));
+      // setRemainCount(Number(_remainCount));
+      // setMintCount(Number(_saleTotalAmount) - Number(_remainCount));
+      // setMaxTx(Number(_maxTx));
+      // setMaxPerWallet(Number(_maxPerWallet));
+
+      // const _mintState = await getMintState(_currentPhase, _mintIndex);
+      // setMintState(_mintState); // true, false
+    } catch (e) {
+      console.log("init error", e);
+    }
   };
 
   useEffect(() => {
     const init = () => {
-      readContract.getBlockNumber().then((_blockNumber) => {
-        setCurrentBlockNumber(_blockNumber);
-      });
-
+      // readContract.getBlockNumber().then((_blockNumber) => {
+      //   setCurrentBlockNumber(_blockNumber);
+      // });
       initPage();
-
       interval.current = setInterval(() => {
         setCurrentBlockNumber((currentBlockNumber) => currentBlockNumber + 1);
       }, 1000);
-
       return () => {
         clearInterval(interval.current);
       };
@@ -357,7 +424,6 @@ export const MintPage = () => {
     } else {
       if (isShowStartBlock === true) {
         setIsShowStartBlock(false);
-        console.log("end change!");
       }
     }
   }, [currentBlockNumber]);
