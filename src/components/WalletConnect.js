@@ -46,7 +46,7 @@ export const WalletConnect = forwardRef((props, ref) => {
 
         const accounts = await _provider.send("eth_requestAccounts", []);
         setAccount(accounts[0]);
-        console.log(accounts);
+        // console.log(accounts);
 
         const _signer = _provider.getSigner();
         setSigner(_signer);

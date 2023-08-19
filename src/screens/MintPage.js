@@ -102,6 +102,7 @@ export const MintPage = () => {
   };
 
   const checkSaleAvailable = (_NFTCount) => {
+    console.log("NFTCOUNT : ", _NFTCount.toString());
     try {
       if (Number(mintCount) + Number(mintAmount) > Number(maxCount)) {
         Swal.fire({
@@ -163,7 +164,7 @@ export const MintPage = () => {
     try {
       if (contract) {
         // 추후 민팅시 가격 들어갈 때 수정 필요.
-        const price = 0;
+        const price = 0; //3000000000000000000;
 
         // console.log("account : ", account);
 
@@ -193,7 +194,9 @@ export const MintPage = () => {
         });
 
         // console.log("tx : ", tx);
-        if (tx) {
+        const result = await tx.wait();
+        // console.log("sdsd", result);
+        if (result) {
           try {
             const _remainCount = await readContract.getRemainCount(mintIndex);
             setRemainCount(Number(_remainCount));
@@ -229,6 +232,7 @@ export const MintPage = () => {
       const mintEndBlockNumber = data[11];
 
       const mintInfo = await readContract.getMintInfo(account);
+      console.log("mintInfo : ", mintInfo);
 
       const mintPrice = mintInfo[0];
       const NFTCount = mintInfo[1];
