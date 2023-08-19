@@ -336,6 +336,7 @@ export const MintPage = () => {
 
   const initPage = async () => {
     try {
+      readContract.initNode();
       const data = await readContract.getDatas();
       const currentBlock = Number(data[0]);
       const stage = Number(data[1]);

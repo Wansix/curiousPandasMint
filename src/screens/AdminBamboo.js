@@ -119,6 +119,7 @@ export const AdminBamboo = () => {
 
   useEffect(() => {
     const init = async () => {
+      readContract.initNode();
       const data = await readContract.getDatas();
 
       const currentBlock = Number(data[0]);

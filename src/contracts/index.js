@@ -36,7 +36,7 @@ const getRandomEndPointMainnet = (r) => {
   else return process.env.REACT_APP_MAINNET_ENDPOINT1;
 };
 
-const initNode = () => {
+export const initNode = () => {
   const randomNum = makeRandomNum();
   let endPoint;
   if (testFlag) endPoint = getRandomEndPointBaobab(randomNum);
@@ -61,8 +61,6 @@ const initNode = () => {
     );
   }
 };
-
-initNode();
 
 export const getBlockNumber = async () => {
   return await provider.getBlockNumber();
