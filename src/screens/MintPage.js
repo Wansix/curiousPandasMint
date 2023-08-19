@@ -45,6 +45,7 @@ export const MintPage = () => {
   const [remainingTime, setRemainingTime] = useState("");
   const [isShowStartBlock, setIsShowStartBlock] = useState(true);
 
+  const walletConnectRef = useRef();
   const interval = useRef();
 
   const calculateTimeDiff = () => {
@@ -78,7 +79,6 @@ export const MintPage = () => {
     return number.toString().padStart(2, "0");
   };
 
-  //   const [remainingSupply, setRemainingSupply] = useState(0);
   const getAccount = (_address) => {
     setAccount(_address);
   };
@@ -162,11 +162,23 @@ export const MintPage = () => {
   const onClickMinting = async () => {
     try {
       if (contract) {
-        const price = 0; //mintPrice; //await readContract.getMintPriceList(mintIndex);
+        // 추후 민팅시 가격 들어갈 때 수정 필요.
+        const price = 0;
 
-        const klayBalance = await provider.getBalance(account);
+        // console.log("account : ", account);
+
+        const selectedAddress = provider.provider.selectedAddress;
+
+        if (account.toString() != selectedAddress.toString()) {
+          setAccount(selectedAddress);
+          walletConnectRef.current.updateAccount(selectedAddress);
+        }
+
+        const klayBalance = await provider.getBalance(selectedAddress);
+        // console.log("klayBalance : ", Number(klayBalance));
         // const klayBalance = await readContract.balanceOfKlay(account);
         const totalPrice = Number(price) * Number(mintAmount);
+        // console.log("totalPrice : ", totalPrice);
         if (totalPrice > Number(klayBalance)) {
           Swal.fire({
             icon: "error",
@@ -187,7 +199,7 @@ export const MintPage = () => {
             setRemainCount(Number(_remainCount));
             // const _totalAmount = await readContract.getTotalSupply();
             setMintCount(maxCount - Number(_remainCount));
-            const _balanceNFT = await readContract.balanceOf(account);
+            const _balanceNFT = await readContract.balanceOf(selectedAddress);
             setBalanceNFT(Number(_balanceNFT));
           } catch (e) {
             console.log("mint complete. update remain count error", e);
@@ -459,6 +471,7 @@ export const MintPage = () => {
             <WalletConnect
               getAccount={getAccount}
               getProvider={getProvider}
+              ref={walletConnectRef}
             ></WalletConnect>
           </div>
         </div>
