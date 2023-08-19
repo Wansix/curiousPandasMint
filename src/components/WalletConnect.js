@@ -8,8 +8,6 @@ import Swal from "sweetalert2";
 
 dotenv.config();
 
-// const provider = new ethers.providers.Web3Provider(window.ethereum);
-
 export const WalletConnect = (props) => {
   const [account, setAccount] = useState("");
   const [viewAccount, setViewAccount] = useState("지갑 연결하기");
@@ -36,7 +34,6 @@ export const WalletConnect = (props) => {
 
         const network = await _provider.getNetwork();
         const chainId = network.chainId;
-        // console.log("chainId : ", chainId);
 
         if (chainId !== 1001 && chainId !== 8217) {
           Swal.fire({
@@ -55,7 +52,6 @@ export const WalletConnect = (props) => {
 
         props.getAccount(tempAccount);
         props.getProvider(_provider);
-        // props.setAccountFunction(tempAccount);
       } else {
         Swal.fire({
           icon: "error",
@@ -68,44 +64,8 @@ export const WalletConnect = (props) => {
     }
   };
 
-  // const getAccount = async () => {
-  //   try {
-  //     // console.log(window.ethereum);
-  //     if (window.ethereum) {
-  //       const accounts = await window.ethereum.request({
-  //         method: "eth_requestAccounts",
-  //       });
-  //       // console.log("connect : ", accounts);
-  //       setAccount(accounts[0]);
-
-  //       const tempAccount = accounts[0];
-  //       const frontAccount = tempAccount.substr(0, 5);
-  //       const backAccount = tempAccount.substr(-5);
-  //       const tempViewAccount = frontAccount + "..." + backAccount;
-  //       setViewAccount(tempViewAccount);
-  //       props.setAccountFunction(tempAccount);
-
-  //       // if (props.isMobile === true) {
-  //       //   console.log("mobile!");
-  //       // } else console.log("pc!");
-
-  //       const nodes = document.querySelectorAll(".WallectConnectImg");
-  //       // console.log(nodes);
-  //       if (props.isMobile === true) {
-  //         nodes[1].style.display = "none";
-  //       } else nodes[0].style.display = "none";
-
-  //       // document.querySelector(".WallectConnectImg").style.display = "none";
-  //     } else {
-  //       alert("Install Metamask!!");
-  //     }
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
   const connectWallet = () => {
     setConnectWalletModal(true);
-    // getAccount();
   };
   const test = async () => {
     console.log(provider);
@@ -113,13 +73,11 @@ export const WalletConnect = (props) => {
   };
 
   const onClickMetamask = () => {
-    // console.log("click metamask");
     getAccount("metamask");
     setConnectWalletModal(false);
   };
 
   const onClickKaikas = () => {
-    // console.log("click kaikas");
     getAccount("kaikas");
     setConnectWalletModal(false);
   };
@@ -131,11 +89,9 @@ export const WalletConnect = (props) => {
         .classList.add("walletConnect-whitelistCheck");
     }
     if (!account) {
-      // console.log("can not connect", account);
       return;
     }
 
-    // console.log(account);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [account]);
 
@@ -148,7 +104,6 @@ export const WalletConnect = (props) => {
       >
         {viewAccount}
       </Button>
-      {/* <Button onClick={test}>test</Button> */}
       <Modal show={connectWalletModal} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>지갑을 선택해주세요</Modal.Title>

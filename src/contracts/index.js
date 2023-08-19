@@ -36,42 +36,24 @@ const getRandomEndPointMainnet = (r) => {
   else return process.env.REACT_APP_MAINNET_ENDPOINT1;
 };
 
-const randomNum = makeRandomNum();
-console.log("random : ", randomNum);
-
-let endPoint;
-if (testFlag) endPoint = getRandomEndPointBaobab(0); //randomNum);
-else endPoint = getRandomEndPointMainnet(randomNum);
-
-// try {
-console.log("endPoint : ", endPoint);
-provider = new ethers.providers.JsonRpcProvider(endPoint);
-contract = new ethers.Contract(
-  curiousPandaNFTAddress,
-  curiousPandaNFTAbi,
-  provider
-);
-
 export const initNode = () => {
-  // const randomNum = makeRandomNum();
-  // console.log("random : ", randomNum);
-  // let endPoint;
-  // if (testFlag) endPoint = getRandomEndPointBaobab(0); //randomNum);
-  // else endPoint = getRandomEndPointMainnet(randomNum);
-  // // try {
-  // console.log("endPoint : ", endPoint);
-  // provider = new ethers.providers.JsonRpcProvider(endPoint);
-  // contract = new ethers.Contract(
-  //   curiousPandaNFTAddress,
-  //   curiousPandaNFTAbi,
-  //   provider
-  // );
-  // } catch (e) {
-  //   console.log("initNode error : ", e);
-  // }
+  const randomNum = makeRandomNum();
+  console.log("random : ", randomNum);
+  let endPoint;
+  if (testFlag) endPoint = getRandomEndPointBaobab(0); //randomNum);
+  else endPoint = getRandomEndPointMainnet(randomNum);
+  try {
+    console.log("endPoint : ", endPoint);
+    provider = new ethers.providers.JsonRpcProvider(endPoint);
+    contract = new ethers.Contract(
+      curiousPandaNFTAddress,
+      curiousPandaNFTAbi,
+      provider
+    );
+  } catch (e) {
+    console.log("initNode error : ", e);
+  }
 };
-
-initNode();
 
 export const getBlockNumber = async () => {
   return await provider.getBlockNumber();
