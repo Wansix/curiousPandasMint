@@ -36,13 +36,13 @@ const getRandomEndPointMainnet = (r) => {
   else return process.env.REACT_APP_MAINNET_ENDPOINT1;
 };
 
-export const initNode = () => {
+const initNode = () => {
   const randomNum = makeRandomNum();
   let endPoint;
   if (testFlag) endPoint = getRandomEndPointBaobab(randomNum);
   else endPoint = getRandomEndPointMainnet(randomNum);
   try {
-    // console.log("endPoint : ", endPoint);
+    console.log("endPoint : ", endPoint);
     provider = new ethers.providers.JsonRpcProvider(endPoint);
     contract = new ethers.Contract(
       curiousPandaNFTAddress,
@@ -61,6 +61,8 @@ export const initNode = () => {
     );
   }
 };
+
+initNode();
 
 export const getBlockNumber = async () => {
   return await provider.getBlockNumber();

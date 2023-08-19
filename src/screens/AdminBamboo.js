@@ -24,7 +24,6 @@ const Index = {
 };
 
 const provider = new ethers.providers.JsonRpcProvider(
-  //
   "https://public-en-baobab.klaytn.net"
 );
 const contract = new ethers.Contract(
@@ -135,7 +134,7 @@ export const AdminBamboo = () => {
       const mintStartBlockNumber = data[10];
       const mintEndBlockNumber = data[11];
 
-      const _currentPhase = currentBlock; //await readContract.getCurrentPhase();
+      const _currentPhase = currentBlock;
       let phaseString;
       if (_currentPhase === 0) phaseString = "INIT";
       if (_currentPhase === 1) phaseString = "WHITELIST1";
