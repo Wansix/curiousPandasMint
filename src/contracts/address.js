@@ -9,4 +9,4 @@ let fileReader = new FileReader();
 // console.log("sdfsdfsdf");
 
 export const curiousPandaNFTAddress =
-  "0x3007301555Ea1Ce1eEfD44b4159d39D6041d73F0";
+  "0x7685fcEf0ab9fc6278c9d078dE5cf88cC9b47EfE";

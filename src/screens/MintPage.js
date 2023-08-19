@@ -180,15 +180,19 @@ export const MintPage = () => {
           value: totalPrice.toString(),
         });
 
-        console.log("tx : ", tx);
-        // if (tx) {
-        //   const _remainCount = await readContract.getRemainCount(mintIndex);
-        //   setRemainCount(Number(_remainCount));
-        //   // const _totalAmount = await readContract.getTotalSupply();
-        //   // setMintCount(maxCount - Number(_remainCount));
-        //   // const _balanceNFT = await readContract.balanceOf(account);
-        //   // setBalanceNFT(Number(_balanceNFT));
-        // }
+        // console.log("tx : ", tx);
+        if (tx) {
+          try {
+            const _remainCount = await readContract.getRemainCount(mintIndex);
+            setRemainCount(Number(_remainCount));
+            // const _totalAmount = await readContract.getTotalSupply();
+            setMintCount(maxCount - Number(_remainCount));
+            const _balanceNFT = await readContract.balanceOf(account);
+            setBalanceNFT(Number(_balanceNFT));
+          } catch (e) {
+            console.log("mint complete. update remain count error", e);
+          }
+        }
       } else {
         Swal.fire({
           icon: "error",
