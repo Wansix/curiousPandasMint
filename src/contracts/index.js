@@ -38,14 +38,12 @@ const getRandomEndPointMainnet = (r) => {
 
 export const initNode = () => {
   const randomNum = makeRandomNum();
-  console.log("random : ", randomNum);
   let endPoint;
-  if (testFlag) endPoint = getRandomEndPointBaobab(2); //randomNum);
+  if (testFlag) endPoint = getRandomEndPointBaobab(randomNum);
   else endPoint = getRandomEndPointMainnet(randomNum);
   try {
-    console.log("endPoint : ", endPoint);
+    // console.log("endPoint : ", endPoint);
     provider = new ethers.providers.JsonRpcProvider(endPoint);
-    console.log("provider", provider);
     contract = new ethers.Contract(
       curiousPandaNFTAddress,
       curiousPandaNFTAbi,
@@ -53,6 +51,14 @@ export const initNode = () => {
     );
   } catch (e) {
     console.log("initNode error : ", e);
+    if (testFlag) endPoint = getRandomEndPointBaobab(2);
+    else endPoint = getRandomEndPointMainnet(3);
+    provider = new ethers.providers.JsonRpcProvider(endPoint);
+    contract = new ethers.Contract(
+      curiousPandaNFTAddress,
+      curiousPandaNFTAbi,
+      provider
+    );
   }
 };
 
