@@ -90,6 +90,17 @@ export const AdminBamboo = () => {
     await txContract.setMintPrice(_phase, _price.toString());
   };
 
+  const advancePhase = async () => {
+    if (!account) {
+      alert("지갑 연결 해주세요");
+      return;
+    }
+    if (!contract) {
+      return;
+    }
+    await txContract.advancePhase();
+  };
+
   const getAccount = (_address) => {
     setAccount(_address);
   };
@@ -201,11 +212,18 @@ export const AdminBamboo = () => {
         getAccount={getAccount}
         getProvider={getProvider}
       ></WalletConnect>
+
       <div className="adminContent">
         <span>
           INIT - WHITELIST1 - WAITING_WHITELIST2 - WHITELIST2 - WAITING_PUBLIC1
           - PUBLIC1 - DONE
         </span>
+      </div>
+
+      <div className="adminContent">
+        <Button variant="success" onClick={advancePhase}>
+          advance phase
+        </Button>
       </div>
       <div className="adminContent">
         <span>Round :</span>
@@ -215,6 +233,7 @@ export const AdminBamboo = () => {
         <span>CurrentPhase :</span>
         <span> {currentPhase}</span>
       </div>
+
       <div className="adminContent">
         <span>Total NFT Amount : </span>
         <span>{totalNFTAmount}</span>
