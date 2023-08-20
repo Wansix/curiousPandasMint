@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import Button from "react-bootstrap/Button";
 import WalletConnect from "../components/WalletConnect";
-import { Signer, ethers } from "ethers";
+import { ethers } from "ethers";
 import { curiousPandaNFTAddress } from "../contracts/address.js";
 import { curiousPandaNFTAbi } from "../contracts/abi.js";
 import * as readContract from "../contracts/index.js";
@@ -30,22 +30,20 @@ export const MintPage = () => {
   const [currentBlockNumber, setCurrentBlockNumber] = useState(0);
   const [startBlockNumber, setStartBlockNumber] = useState("");
   const [endBlockNumber, setEndBlockNumber] = useState("");
-  // const [mintState, setMintState] = useState(false);
   const [mintIndex, setMintIndex] = useState(Index.whitelist1);
   const [mintPhaseString, setMintPhaseString] = useState("");
-  const [currentPhase, setCurrentPhase] = useState(Phase.INIT);
+  // const [currentPhase, setCurrentPhase] = useState(Phase.INIT);
   const [mintCount, setMintCount] = useState(0);
   const [maxCount, setMaxCount] = useState(0);
-  const [remainCount, setRemainCount] = useState(0);
+  // const [remainCount, setRemainCount] = useState(0);
   const [mintAmount, setMintAmount] = useState(1);
   const [contract, setContract] = useState();
-  const [balanceNFT, setBalanceNFT] = useState(0);
+  // const [balanceNFT, setBalanceNFT] = useState(0);
   const [maxTx, setMaxTx] = useState(1);
   const [maxPerWallet, setMaxPerWallet] = useState(0);
   const [remainingTime, setRemainingTime] = useState("");
   const [isShowStartBlock, setIsShowStartBlock] = useState(true);
 
-  const walletConnectRef = useRef();
   const interval = useRef();
 
   const calculateTimeDiff = () => {
@@ -113,9 +111,6 @@ export const MintPage = () => {
         return false;
       }
 
-      // const NFTCount = await readContract.getNFTCountsList(mintIndex, account);
-      // console.log("maxPerWallet:", maxPerWallet);
-
       if (Number(_NFTCount) + Number(mintAmount) > maxPerWallet) {
         Swal.fire({
           icon: "error",
@@ -133,10 +128,10 @@ export const MintPage = () => {
     let response = true;
 
     if (_currentPhase === Phase.WHITELIST1) {
-      response = whitelist1; // await readContract.checkWhitelist(0, account);
+      response = whitelist1;
     }
     if (_currentPhase === Phase.WHITELIST2) {
-      response = whitelist2; //await readContract.checkWhitelist(1, account);
+      response = whitelist2;
     }
 
     return response;
@@ -148,12 +143,6 @@ export const MintPage = () => {
     startBlockNumber,
     endBlockNumber
   ) => {
-    // const _currentBlock = await readContract.getBlockNumber();
-    // const startBlockNumber = await readContract.getMintStartBlockNumber(
-    //   _mintIndex
-    // );
-    // const endBlockNumber = await readContract.getMintEndBlockNumber(_mintIndex);
-
     if (startBlockNumber > currnetBlock) return false;
     if (endBlockNumber < currnetBlock) return false;
 
@@ -164,22 +153,11 @@ export const MintPage = () => {
     try {
       if (contract) {
         // 추후 민팅시 가격 들어갈 때 수정 필요.
-        const price = 0; //3000000000000000000;
+        const price = 0; //1000000000000000000;
 
-        // console.log("account : ", account);
-
-        const selectedAddress = provider.provider.selectedAddress;
-
-        if (account.toString() != selectedAddress.toString()) {
-          setAccount(selectedAddress);
-          walletConnectRef.current.updateAccount(selectedAddress);
-        }
-
-        const klayBalance = await provider.getBalance(selectedAddress);
-        // console.log("klayBalance : ", Number(klayBalance));
-        // const klayBalance = await readContract.balanceOfKlay(account);
+        const klayBalance = await provider.getBalance(account);
         const totalPrice = Number(price) * Number(mintAmount);
-        // console.log("totalPrice : ", totalPrice);
+
         if (totalPrice > Number(klayBalance)) {
           Swal.fire({
             icon: "error",
@@ -193,17 +171,15 @@ export const MintPage = () => {
           value: totalPrice.toString(),
         });
 
-        // console.log("tx : ", tx);
         const result = await tx.wait();
-        // console.log("sdsd", result);
+
         if (result) {
           try {
             const _remainCount = await readContract.getRemainCount(mintIndex);
-            setRemainCount(Number(_remainCount));
-            // const _totalAmount = await readContract.getTotalSupply();
+
             setMintCount(maxCount - Number(_remainCount));
-            const _balanceNFT = await readContract.balanceOf(selectedAddress);
-            setBalanceNFT(Number(_balanceNFT));
+            // const _balanceNFT = await readContract.balanceOf(account);
+            // setBalanceNFT(Number(_balanceNFT));
           } catch (e) {
             console.log("mint complete. update remain count error", e);
           }
@@ -219,27 +195,15 @@ export const MintPage = () => {
       const data = await readContract.getDatas();
 
       const currentBlock = Number(data[0]);
-      const stage = Number(data[1]);
       const currentPhase = data[2];
-      const totalNFTAmount = Number(data[3]);
-      const totalSaleNFTAmount = Number(data[4]);
-      const initSupply = Number(data[5]);
-      const saleTotalAmounts = data[6];
-      const saleRemainAmounts = data[7];
-      const maxPerWallet = data[8];
-      const maxPerTransaction = data[9];
       const mintStartBlockNumber = data[10];
       const mintEndBlockNumber = data[11];
 
       const mintInfo = await readContract.getMintInfo(account);
-      console.log("mintInfo : ", mintInfo);
 
-      const mintPrice = mintInfo[0];
       const NFTCount = mintInfo[1];
       const isWhitelist1 = mintInfo[2];
       const isWhitelist2 = mintInfo[3];
-
-      // const _currentPhase = await readContract.getCurrentPhase();
 
       const _mintIndex = getMintIndex(currentPhase);
 
@@ -291,26 +255,6 @@ export const MintPage = () => {
     }
   };
 
-  const _setCurrentPhase = async () => {
-    const _currentPhase = await readContract.getCurrentPhase();
-    setCurrentPhase(_currentPhase);
-    return _currentPhase;
-  };
-
-  const getMintState = async (_currentPhase, _mintIndex) => {
-    if (
-      _currentPhase === Phase.WHITELIST1 ||
-      _currentPhase === Phase.WHITELIST2 ||
-      _currentPhase === Phase.PUBLIC1
-    ) {
-      const isMintAvailableTime = await checkMintBlockNumber(_mintIndex);
-      if (isMintAvailableTime) return true;
-      else return false;
-    } else {
-      return false;
-    }
-  };
-
   const getMintIndex = (_currentPhase) => {
     if (_currentPhase <= Phase.WHITELIST1) {
       return Index.whitelist1;
@@ -355,11 +299,7 @@ export const MintPage = () => {
       readContract.initNode();
       const data = await readContract.getDatas();
       const currentBlock = Number(data[0]);
-      const stage = Number(data[1]);
       const currentPhase = data[2];
-      const totalNFTAmount = Number(data[3]);
-      const totalSaleNFTAmount = Number(data[4]);
-      const initSupply = Number(data[5]);
       const saleTotalAmounts = data[6];
       const saleRemainAmounts = data[7];
       const maxPerWallet = data[8];
@@ -368,54 +308,24 @@ export const MintPage = () => {
       const mintEndBlockNumber = data[11];
 
       setCurrentBlockNumber(currentBlock);
-
-      // const _currentPhase = await _setCurrentPhase();
-      setCurrentPhase(currentPhase);
+      // setCurrentPhase(currentPhase);
       const _mintIndex = getMintIndex(currentPhase);
 
       setStartBlockNumber(mintStartBlockNumber[_mintIndex].toString());
       setEndBlockNumber(mintEndBlockNumber[_mintIndex].toString());
 
-      // readContract
-      //   .getMintStartBlockNumber(_mintIndex)
-      //   .then((_startBlockNumber) => {
-      //     setStartBlockNumber(_startBlockNumber.toString());
-      //   });
-
-      // readContract.getMintEndBlockNumber(_mintIndex).then((_endBlockNumber) => {
-      //   setEndBlockNumber(_endBlockNumber.toString());
-      // });
-
-      setMintIndex(_mintIndex); // whitelis1, whitelist2, public
+      setMintIndex(_mintIndex);
 
       const _mintPhaseString = getPhaseString(currentPhase);
       setMintPhaseString(_mintPhaseString);
-
-      // const [_saleTotalAmount, _remainCount, _maxTx, _maxPerWallet] =
-      //   await Promise.all([
-      // readContract.getSaleTotalAmount(_mintIndex),
-      // readContract.getRemainCount(_mintIndex),
-      //     readContract.getMaxPerTx(_mintIndex),
-      //     readContract.getMaxPerWallet(_mintIndex),
-      //   ]);
 
       const saleTotalAmount = Number(saleTotalAmounts[_mintIndex]);
       const saleRemainAmount = Number(saleRemainAmounts[_mintIndex]);
 
       setMaxCount(saleTotalAmount);
-      setRemainCount(saleRemainAmount);
       setMintCount(saleTotalAmount - saleRemainAmount);
-      setMaxPerWallet(Number(maxPerTransaction[_mintIndex]));
-      setMaxTx(Number(maxPerWallet[_mintIndex]));
-
-      // setMaxCount(Number(_saleTotalAmount));
-      // setRemainCount(Number(_remainCount));
-      // setMintCount(Number(_saleTotalAmount) - Number(_remainCount));
-      // setMaxTx(Number(_maxTx));
-      // setMaxPerWallet(Number(_maxPerWallet));
-
-      // const _mintState = await getMintState(_currentPhase, _mintIndex);
-      // setMintState(_mintState); // true, false
+      setMaxPerWallet(Number(maxPerWallet[_mintIndex]));
+      setMaxTx(Number(maxPerTransaction[_mintIndex]));
     } catch (e) {
       console.log("init error", e);
     }
@@ -423,9 +333,6 @@ export const MintPage = () => {
 
   useEffect(() => {
     const init = () => {
-      // readContract.getBlockNumber().then((_blockNumber) => {
-      //   setCurrentBlockNumber(_blockNumber);
-      // });
       initPage();
       interval.current = setInterval(() => {
         setCurrentBlockNumber((currentBlockNumber) => currentBlockNumber + 1);
@@ -435,6 +342,7 @@ export const MintPage = () => {
       };
     };
     init();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -447,19 +355,21 @@ export const MintPage = () => {
         setIsShowStartBlock(false);
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentBlockNumber]);
 
   useEffect(() => {
     getContract();
 
-    const connectInit = async () => {
-      if (account) {
-        const _balanceNFT = await readContract.balanceOf(account);
-        setBalanceNFT(Number(_balanceNFT));
-      }
-    };
+    // const connectInit = async () => {
+    //   if (account) {
+    //     const _balanceNFT = await readContract.balanceOf(account);
+    //     setBalanceNFT(Number(_balanceNFT));
+    //   }
+    // };
 
-    connectInit();
+    // connectInit();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [account]);
 
   return (
@@ -468,30 +378,27 @@ export const MintPage = () => {
         <div className="mintPage_main-header-container">
           <div className="mintPage_main-header-content">
             <div className="mintPage_main-header-logo">
-              <img src="https://lh3.googleusercontent.com/N539sLqOcoGSs0qy9gvfwXiOF2rro3a4L03djiMGiq5No8Sf8QK1yf4K0TRjYxmuHBHhRGCAYnKC80pqau5335gdrhoGXq4SRaAbxtsifjhUNsBpY-k6=s0"></img>
+              <img
+                src="https://lh3.googleusercontent.com/N539sLqOcoGSs0qy9gvfwXiOF2rro3a4L03djiMGiq5No8Sf8QK1yf4K0TRjYxmuHBHhRGCAYnKC80pqau5335gdrhoGXq4SRaAbxtsifjhUNsBpY-k6=s0"
+                alt="logo"
+              ></img>
             </div>
           </div>
           <div className="mintPage_main-header-content">
             <WalletConnect
               getAccount={getAccount}
               getProvider={getProvider}
-              ref={walletConnectRef}
             ></WalletConnect>
           </div>
         </div>
       </div>
-      {/* <div className="mintPage_main-subject-container">
-        <div className="mintPage_main-subject">
-          <span>Curious Pandas</span>
-        </div>
-      </div> */}
       <div className="mintPage_main-body">
         <div className="mintPage_main_left-container">
-          {/* <div className="mintPage_main_left-header">
-            <img src="https://lh3.googleusercontent.com/N539sLqOcoGSs0qy9gvfwXiOF2rro3a4L03djiMGiq5No8Sf8QK1yf4K0TRjYxmuHBHhRGCAYnKC80pqau5335gdrhoGXq4SRaAbxtsifjhUNsBpY-k6=s0"></img>
-          </div> */}
           <div className="mintPage_main_left-content">
-            <img src="https://lh3.googleusercontent.com/RV0mMHqAGw1gUJXOFZxueJtlaesy5KX8yPd2cEvhglV8UCI8eePMLm3Ja_sI7aPj8j3ezVfUcWZgHiHu4Q70adhGINcrh02p4zENZxX9E7gsa9pY_0DkUA=s0"></img>
+            <img
+              src="https://lh3.googleusercontent.com/RV0mMHqAGw1gUJXOFZxueJtlaesy5KX8yPd2cEvhglV8UCI8eePMLm3Ja_sI7aPj8j3ezVfUcWZgHiHu4Q70adhGINcrh02p4zENZxX9E7gsa9pY_0DkUA=s0"
+              alt="img1"
+            ></img>
           </div>
           <div className="mintPage_main_left-content">
             <div className="mintPage_main_left-content_description-box">
@@ -557,7 +464,11 @@ export const MintPage = () => {
             <div className="mintPage_blockHeight-container blockHeight-description">
               <span>정확한 블록 높이는 &nbsp;</span>
 
-              <a href="https://scope.klaytn.com/" target="_blank">
+              <a
+                href="https://scope.klaytn.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 klaytn scope
               </a>
 
@@ -586,8 +497,6 @@ export const MintPage = () => {
             </div>
           </div>
           <div className="mintPage_main-content">
-            {/* <div>Price</div> */}
-            {/* <div>0 klaytn</div> */}
             <div className="mintPage_main-content_mintAmount-container">
               <Button
                 className="mintAmountButton"
@@ -621,9 +530,9 @@ export const MintPage = () => {
             </div>
           </div>
 
-          <div className="mintPage_main-content">
+          {/* <div className="mintPage_main-content">
             <div>My NFT 개수 - {balanceNFT}</div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

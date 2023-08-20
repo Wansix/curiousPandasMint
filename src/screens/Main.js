@@ -3,7 +3,11 @@ import React from "react";
 export const Main = () => {
   return (
     <div className="Main-container">
-      <iframe className="Main" src="https://kkad.creatorlink.net/"></iframe>
+      <iframe
+        title="main"
+        className="Main"
+        src="https://kkad.creatorlink.net/"
+      ></iframe>
     </div>
   );
 };

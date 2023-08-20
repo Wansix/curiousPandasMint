@@ -1,8 +1,8 @@
 import React from "react";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import WalletConnect from "../components/WalletConnect";
-import { Signer, ethers } from "ethers";
+import { ethers } from "ethers";
 import { curiousPandaNFTAddress } from "../contracts/address.js";
 import { curiousPandaNFTAbi } from "../contracts/abi.js";
 import * as readContract from "../contracts/index.js";
@@ -51,7 +51,6 @@ export const AdminBamboo = () => {
   const [textWhitelist1Price, setTextWhitelist1Price] = useState("");
   const [textWhitelist2Price, setTextWhitelist2Price] = useState("");
   const [textPublic1Price, setTextPublic1Price] = useState("");
-  const [textTotalSaleNFTAmount, setTextTotalSaleNFTAmount] = useState("");
   const [initSupply, setInitSupply] = useState(1);
   const [round, setRound] = useState(0);
 
@@ -64,9 +63,6 @@ export const AdminBamboo = () => {
   const onChangePublic1Price = (e) => {
     setTextPublic1Price(e.target.value);
   };
-  const onChangeTotalSaleNFTAmount = (e) => {
-    setTextTotalSaleNFTAmount(e.target.value);
-  };
 
   const setPrice = async (_phase) => {
     if (!account) {
@@ -76,7 +72,6 @@ export const AdminBamboo = () => {
     if (!contract) {
       return;
     }
-    // console.log(_phase);
 
     let _price;
     if (_phase === Index.whitelist1) {
@@ -92,7 +87,7 @@ export const AdminBamboo = () => {
 
     console.log(_phase, _price.toString());
 
-    const tx = await txContract.setMintPrice(_phase, _price.toString());
+    await txContract.setMintPrice(_phase, _price.toString());
   };
 
   const getAccount = (_address) => {
@@ -122,7 +117,6 @@ export const AdminBamboo = () => {
       readContract.initNode();
       const data = await readContract.getDatas();
 
-      const currentBlock = Number(data[0]);
       const stage = Number(data[1]);
       const currentPhase = data[2];
       const totalNFTAmount = Number(data[3]);
@@ -147,22 +141,18 @@ export const AdminBamboo = () => {
 
       setCurrentPhase(phaseString);
 
-      // const _totalNFTAmount = await contract.totalNFTAmount();
       setTotalNFTAmount(totalNFTAmount);
 
       const _totalSupply = await contract.totalSupply();
       setTotalSupply(Number(_totalSupply));
 
-      // const _totalSaleNFTAmount = await contract.totalSaleNFTAmount();
       setTotalSaleNFTAmount(totalSaleNFTAmount);
 
       const _mintDeposit = await contract.mintDepositAddress();
       setMintDeposit(_mintDeposit);
 
-      // const _initSupply = await contract.initSupply();
       setInitSupply(initSupply);
 
-      // const _round = await contract.stage();
       setRound(stage);
 
       let _saleTotalAmount = [];
@@ -173,16 +163,6 @@ export const AdminBamboo = () => {
       let _mintEndBlockNumber = [];
       let _mintPrice = [];
       for (let i = 0; i < 3; i++) {
-        // _saleTotalAmount.push(Number(await contract.saleTotalAmount(i)));
-        // _saleRemainAmount.push(Number(await contract.saleRemainAmount(i)));
-        // _maxPerWallet.push(Number(await contract.maxPerWallet(i)));
-        // _maxPerTx.push(Number(await contract.maxPerTransaction(i)));
-        // _mintStartBlockNumber.push(
-        //   Number(await contract.mintStartBlockNumber(i))
-        // );
-        // _mintEndBlockNumber.push(Number(await contract.mintEndBlockNumber(i)));
-        // _mintPrice.push(Number(await contract.mintPriceList(i)));
-
         _saleTotalAmount.push(Number(saleTotalAmounts[i]));
         _saleRemainAmount.push(Number(saleRemainAmounts[i]));
         _maxPerWallet.push(Number(maxPerWallet[i]));
@@ -206,22 +186,12 @@ export const AdminBamboo = () => {
 
   useEffect(() => {
     getContract();
-
-    const connectInit = async () => {
-      if (account) {
-        // const _balanceNFT = await readContract.balanceOf(account);
-        // setBalanceNFT(Number(_balanceNFT));
-      }
-    };
-
-    connectInit();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [account]);
   return (
     <div
       style={{
         display: "flex",
-        // justifyContent: "center",
-        // alignItems: "center",
         margin: "100px 200px",
         flexDirection: "column",
         backgroundColor: "beige",
@@ -326,7 +296,6 @@ export const AdminBamboo = () => {
           placeholder="가격 입력(klay)"
         ></input>
         <Button
-          // className=""
           variant="success"
           onClick={() => {
             setPrice(Index.whitelist1);
@@ -344,7 +313,6 @@ export const AdminBamboo = () => {
           placeholder="가격 입력(klay)"
         ></input>
         <Button
-          // className=""
           variant="success"
           onClick={() => {
             setPrice(Index.whitelist2);
@@ -362,7 +330,6 @@ export const AdminBamboo = () => {
           placeholder="가격 입력(klay)"
         ></input>
         <Button
-          // className=""
           variant="success"
           onClick={() => {
             setPrice(Index.public1);

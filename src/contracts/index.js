@@ -42,7 +42,7 @@ export const initNode = () => {
   if (testFlag) endPoint = getRandomEndPointBaobab(randomNum);
   else endPoint = getRandomEndPointMainnet(randomNum);
   try {
-    console.log("endPoint : ", endPoint);
+    // console.log("endPoint : ", endPoint);
     provider = new ethers.providers.JsonRpcProvider(endPoint);
     contract = new ethers.Contract(
       curiousPandaNFTAddress,

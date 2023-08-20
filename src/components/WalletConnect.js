@@ -1,4 +1,4 @@
-import React, { forwardRef, useImperativeHandle } from "react";
+import React from "react";
 import { useState, useEffect } from "react";
 import * as dotenv from "dotenv";
 import { Button } from "react-bootstrap";
@@ -8,24 +8,14 @@ import Swal from "sweetalert2";
 
 dotenv.config();
 
-export const WalletConnect = forwardRef((props, ref) => {
-  useImperativeHandle(ref, () => ({
-    // 부모 컴포넌트에서 사용할 함수를 선언
-    updateAccount,
-  }));
+export const WalletConnect = (props) => {
   const [account, setAccount] = useState("");
   const [viewAccount, setViewAccount] = useState("지갑 연결하기");
-  const [provider, setProvider] = useState({});
-  const [signer, setSigner] = useState({});
+  // const [provider, setProvider] = useState({});
+  // const [signer, setSigner] = useState({});
   const [connectWalletModal, setConnectWalletModal] = useState(false);
 
   const handleClose = () => setConnectWalletModal(false);
-
-  const updateAccount = (account) => {
-    setAccount(account);
-    const viewAccountStr = setViewAccountStr(account);
-    setViewAccount(viewAccountStr);
-  };
 
   const setViewAccountStr = (rawAccount) => {
     const tempAccount = rawAccount;
@@ -37,19 +27,23 @@ export const WalletConnect = forwardRef((props, ref) => {
 
   const getAccount = async (walletName) => {
     let wallet;
-    if (walletName === "kaikas") wallet = window.klaytn;
-    if (walletName === "metamask") wallet = window.ethereum;
+    if (walletName === "kaikas") {
+      wallet = window.klaytn;
+    }
+    if (walletName === "metamask") {
+      wallet = window.ethereum;
+    }
     try {
       if (wallet) {
         const _provider = new ethers.providers.Web3Provider(wallet);
-        setProvider(_provider);
+        // setProvider(_provider);
 
         const accounts = await _provider.send("eth_requestAccounts", []);
         setAccount(accounts[0]);
         // console.log(accounts);
 
-        const _signer = _provider.getSigner();
-        setSigner(_signer);
+        // const _signer = _provider.getSigner();
+        // setSigner(_signer);
 
         const network = await _provider.getNetwork();
         const chainId = network.chainId;
@@ -84,20 +78,37 @@ export const WalletConnect = forwardRef((props, ref) => {
   const connectWallet = () => {
     setConnectWalletModal(true);
   };
-  const test = async () => {
-    console.log(provider);
-    console.log(signer);
-  };
 
   const onClickMetamask = () => {
+    // setWalletName("metamask");
     getAccount("metamask");
     setConnectWalletModal(false);
   };
 
   const onClickKaikas = () => {
+    // setWalletName("kaikas");
     getAccount("kaikas");
     setConnectWalletModal(false);
   };
+
+  useEffect(() => {
+    window.klaytn.on("accountsChanged", function () {
+      getAccount("kaikas");
+      // console.log("change kaikas", accounts[0], walletName);
+      // if (walletName === "kaikas") {
+      //   console.log("change!");
+
+      // }
+    });
+
+    window.ethereum.on("accountsChanged", function () {
+      getAccount("metamask");
+      // if (walletName === "metamask") {
+
+      // }
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     if (props.WhitelistCheck === true) {
@@ -128,7 +139,10 @@ export const WalletConnect = forwardRef((props, ref) => {
         <Modal.Body>
           <div className="WalletSelect-content" onClick={onClickMetamask}>
             <div className="WalletSelect-contect-icon">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/MetaMask_Fox.svg"></img>
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/3/36/MetaMask_Fox.svg"
+                alt="metamask"
+              ></img>
             </div>
             <div className="WalletSelect-contect-text">
               <span>Metamask</span>
@@ -136,7 +150,10 @@ export const WalletConnect = forwardRef((props, ref) => {
           </div>
           <div className="WalletSelect-content" onClick={onClickKaikas}>
             <div className="WalletSelect-contect-icon">
-              <img src="https://www.gitbook.com/cdn-cgi/image/width=40,dpr=2,height=40,fit=contain,format=auto/https%3A%2F%2F3237190568-files.gitbook.io%2F~%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FzvgdDSwmwvJE7FLb6FCc%252Ficon%252FzKemLV4grODY1vlxlTrU%252Fsymbol_multi_solid.png%3Falt%3Dmedia%26token%3D53643768-91b6-41cb-8a9f-52d6b1194550"></img>
+              <img
+                src="https://www.gitbook.com/cdn-cgi/image/width=40,dpr=2,height=40,fit=contain,format=auto/https%3A%2F%2F3237190568-files.gitbook.io%2F~%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FzvgdDSwmwvJE7FLb6FCc%252Ficon%252FzKemLV4grODY1vlxlTrU%252Fsymbol_multi_solid.png%3Falt%3Dmedia%26token%3D53643768-91b6-41cb-8a9f-52d6b1194550"
+                alt="kaikas"
+              ></img>
             </div>
             <div className="WalletSelect-contect-text">
               <span>Kaikas</span>
@@ -154,7 +171,7 @@ export const WalletConnect = forwardRef((props, ref) => {
       </Modal>
     </div>
   );
-});
+};
 // => {
 //   const [account, setAccount] = useState("");
 //   const [viewAccount, setViewAccount] = useState("지갑 연결하기");
