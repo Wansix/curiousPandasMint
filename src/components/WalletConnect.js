@@ -95,18 +95,10 @@ export const WalletConnect = (props) => {
 
   useEffect(() => {
     window.klaytn.on("accountsChanged", function () {
-      console.log("account change kaikas");
       getAccount("kaikas");
-      // console.log("change kaikas", accounts[0], walletName);
-      // if (walletName === "kaikas") {
-      //   console.log("change!");
-      // }
     });
     window.ethereum.on("accountsChanged", function () {
-      console.log("account change metamask");
       getAccount("metamask");
-      // if (walletName === "metamask") {
-      // }
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
