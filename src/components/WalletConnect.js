@@ -57,8 +57,6 @@ export const WalletConnect = (props) => {
           return;
         }
 
-        console.log("accounts :", accounts[0]);
-
         const tempAccount = accounts[0];
         const tempViewAccount = setViewAccountStr(tempAccount);
         setViewAccount(tempViewAccount);
