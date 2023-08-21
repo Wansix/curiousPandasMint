@@ -24,7 +24,8 @@ const Index = {
 };
 
 const provider = new ethers.providers.JsonRpcProvider(
-  "https://public-en-baobab.klaytn.net"
+  // "https://public-en-baobab.klaytn.net"
+  "https://klaytn-mainnet-rpc.allthatnode.com:8551"
 );
 const contract = new ethers.Contract(
   curiousPandaNFTAddress,
