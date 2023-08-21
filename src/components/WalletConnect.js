@@ -14,21 +14,6 @@ export const WalletConnect = (props) => {
   // const [provider, setProvider] = useState({});
   // const [signer, setSigner] = useState({});
   const [connectWalletModal, setConnectWalletModal] = useState(false);
-  window.klaytn.on("accountsChanged", function () {
-    getAccount("kaikas");
-    // console.log("change kaikas", accounts[0], walletName);
-    // if (walletName === "kaikas") {
-    //   console.log("change!");
-
-    // }
-  });
-
-  window.ethereum.on("accountsChanged", function () {
-    getAccount("metamask");
-    // if (walletName === "metamask") {
-
-    // }
-  });
 
   const handleClose = () => setConnectWalletModal(false);
 
@@ -72,6 +57,8 @@ export const WalletConnect = (props) => {
           return;
         }
 
+        console.log("accounts :", accounts[0]);
+
         const tempAccount = accounts[0];
         const tempViewAccount = setViewAccountStr(tempAccount);
         setViewAccount(tempViewAccount);
@@ -107,18 +94,20 @@ export const WalletConnect = (props) => {
   };
 
   useEffect(() => {
-    // window.klaytn.on("accountsChanged", function () {
-    //   getAccount("kaikas");
-    //   // console.log("change kaikas", accounts[0], walletName);
-    //   // if (walletName === "kaikas") {
-    //   //   console.log("change!");
-    //   // }
-    // });
-    // window.ethereum.on("accountsChanged", function () {
-    //   getAccount("metamask");
-    //   // if (walletName === "metamask") {
-    //   // }
-    // });
+    window.klaytn.on("accountsChanged", function () {
+      console.log("account change kaikas");
+      getAccount("kaikas");
+      // console.log("change kaikas", accounts[0], walletName);
+      // if (walletName === "kaikas") {
+      //   console.log("change!");
+      // }
+    });
+    window.ethereum.on("accountsChanged", function () {
+      console.log("account change metamask");
+      getAccount("metamask");
+      // if (walletName === "metamask") {
+      // }
+    });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
