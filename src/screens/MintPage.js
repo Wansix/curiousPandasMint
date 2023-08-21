@@ -100,7 +100,7 @@ export const MintPage = () => {
   };
 
   const checkSaleAvailable = (_NFTCount) => {
-    console.log("NFTCOUNT : ", _NFTCount.toString());
+    // console.log("NFTCOUNT : ", _NFTCount.toString());
     try {
       if (Number(mintCount) + Number(mintAmount) > Number(maxCount)) {
         Swal.fire({
@@ -169,6 +169,8 @@ export const MintPage = () => {
 
         const tx = await contract.batchMintNFT(mintAmount, {
           value: totalPrice.toString(),
+          gasPrice: 25000000000,
+          gasLimit: 250000,
         });
 
         const result = await tx.wait();
