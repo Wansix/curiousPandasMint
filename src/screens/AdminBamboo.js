@@ -6,6 +6,7 @@ import { ethers } from "ethers";
 import { curiousPandaNFTAddress } from "../contracts/address.js";
 import { curiousPandaNFTAbi } from "../contracts/abi.js";
 import * as readContract from "../contracts/index.js";
+import { testFlag } from "../contracts/index.js";
 
 const Phase = {
   INIT: 0,
@@ -23,10 +24,14 @@ const Index = {
   public1: 2,
 };
 
-const provider = new ethers.providers.JsonRpcProvider(
-  // "https://public-en-baobab.klaytn.net"
-  "https://klaytn-mainnet-rpc.allthatnode.com:8551"
-);
+let node;
+if (testFlag) {
+  node = "https://public-en-baobab.klaytn.net";
+} else {
+  node = "https://public-en-cypress.klaytn.net";
+}
+
+const provider = new ethers.providers.JsonRpcProvider(node);
 const contract = new ethers.Contract(
   curiousPandaNFTAddress,
   curiousPandaNFTAbi,
