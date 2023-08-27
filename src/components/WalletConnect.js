@@ -92,12 +92,18 @@ export const WalletConnect = (props) => {
   };
 
   useEffect(() => {
-    window.klaytn.on("accountsChanged", function () {
-      getAccount("kaikas");
-    });
-    window.ethereum.on("accountsChanged", function () {
-      getAccount("metamask");
-    });
+    if (window.klaytn) {
+      window.klaytn.on("accountsChanged", function () {
+        getAccount("kaikas");
+      });
+    }
+
+    if (window.ethereum) {
+      window.ethereum.on("accountsChanged", function () {
+        getAccount("metamask");
+      });
+    }
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
