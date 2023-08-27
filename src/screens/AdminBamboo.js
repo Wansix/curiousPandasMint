@@ -59,6 +59,7 @@ export const AdminBamboo = () => {
   const [textPublic1Price, setTextPublic1Price] = useState("");
   const [initSupply, setInitSupply] = useState(1);
   const [round, setRound] = useState(0);
+  // const [walletName, setWalletName] = useState("");
 
   const onChangeWhitelist1Price = (e) => {
     setTextWhitelist1Price(e.target.value);
@@ -107,6 +108,9 @@ export const AdminBamboo = () => {
     await txContract.advancePhase();
   };
 
+  const getWalletName = (_walletName) => {
+    // setWalletName(_walletName);
+  };
   const getAccount = (_address) => {
     setAccount(_address);
   };
@@ -249,6 +253,7 @@ export const AdminBamboo = () => {
       <WalletConnect
         getAccount={getAccount}
         getProvider={getProvider}
+        getWalletName={getWalletName}
       ></WalletConnect>
 
       <div className="adminContent">

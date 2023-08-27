@@ -43,6 +43,7 @@ export const MintPage = () => {
   const [maxPerWallet, setMaxPerWallet] = useState(0);
   const [remainingTime, setRemainingTime] = useState("");
   const [isShowStartBlock, setIsShowStartBlock] = useState(true);
+  // const [walletName, setWalletName] = useState("");
 
   const interval = useRef();
 
@@ -75,6 +76,10 @@ export const MintPage = () => {
 
   const padTime = (number) => {
     return number.toString().padStart(2, "0");
+  };
+
+  const getWalletName = (_walletName) => {
+    // setWalletName(_walletName);
   };
 
   const getAccount = (_address) => {
@@ -390,6 +395,7 @@ export const MintPage = () => {
             <WalletConnect
               getAccount={getAccount}
               getProvider={getProvider}
+              getWalletName={getWalletName}
             ></WalletConnect>
           </div>
         </div>

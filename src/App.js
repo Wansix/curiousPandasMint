@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MintPage from "./screens/MintPage";
 import Main from "./screens/Main";
 import { AdminBamboo } from "./screens/AdminBamboo";
+import { VerifyBamboo } from "./screens/VerifyBamboo";
 
 function App() {
   return (
@@ -15,6 +16,10 @@ function App() {
           <Route
             path="/AdminBamboo"
             element={<AdminBamboo></AdminBamboo>}
+          ></Route>
+          <Route
+            path="/VerifyBamboo"
+            element={<VerifyBamboo></VerifyBamboo>}
           ></Route>
         </Routes>
       </div>
