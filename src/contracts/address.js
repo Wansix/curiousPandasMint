@@ -1,2 +1,2 @@
 export const curiousPandaNFTAddress =
-  "0xFC18F5a01ededcED7862AAea2128Dff446BF7210";
+  "0x485d9367e7bc20063729488A53D3EEDf21a91BcD";

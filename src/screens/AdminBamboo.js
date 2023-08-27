@@ -129,6 +129,38 @@ export const AdminBamboo = () => {
     }
   };
 
+  const setWhitelists = async (whitelistNum) => {
+    let whitelists;
+    if (!account) {
+      alert("지갑 연결 해주세요");
+      return;
+    }
+
+    if (whitelistNum === Phase.WHITELIST1) {
+      whitelists = document.querySelector(".addWhitelists_1").value;
+    }
+    if (whitelistNum === Phase.WHITELIST2) {
+      whitelists = document.querySelector(".addWhitelists_2").value;
+    }
+
+    console.log(whitelists);
+    const arr = whitelists.split("\n");
+    console.log(arr);
+
+    try {
+      if (!contract) {
+        return;
+      }
+      if (whitelistNum === Phase.WHITELIST1) {
+        txContract.addToWhitelist(0, arr);
+      } else if (whitelistNum === Phase.WHITELIST2) {
+        txContract.addToWhitelist(1, arr);
+      }
+    } catch (error) {
+      console.log("setWhitelists", error);
+    }
+  };
+
   useEffect(() => {
     const init = async () => {
       readContract.initNode();
@@ -361,6 +393,32 @@ export const AdminBamboo = () => {
           }}
         >
           set Public1 Price
+        </Button>
+      </div>
+      <div>
+        add whitelist1
+        <textarea className="addWhitelists addWhitelists_1"></textarea>
+        <Button
+          className="Admin_Button"
+          variant="success"
+          onClick={() => {
+            setWhitelists(Phase.WHITELIST1);
+          }}
+        >
+          Add whitelist1
+        </Button>
+      </div>
+      <div>
+        add whitelist2
+        <textarea className="addWhitelists addWhitelists_2"></textarea>
+        <Button
+          className="Admin_Button"
+          variant="success"
+          onClick={() => {
+            setWhitelists(Phase.WHITELIST2);
+          }}
+        >
+          Add whitelist1
         </Button>
       </div>
     </div>

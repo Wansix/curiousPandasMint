@@ -273,3 +273,12 @@
   display: flex;
   justify-content: space-between;
 }
+
+.Admin_Button {
+  margin-left: 10px;
+}
+
+.addWhitelists {
+  width: 500px;
+  height: 300px;
+}

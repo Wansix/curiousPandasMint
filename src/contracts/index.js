@@ -5,7 +5,7 @@ import { curiousPandaNFTAbi } from "./abi.js";
 import dotenv from "dotenv";
 dotenv.config();
 
-export const testFlag = false;
+export const testFlag = true;
 
 let provider;
 let contract;
