@@ -59,6 +59,9 @@ export const AdminBamboo = () => {
   const [textPublic1Price, setTextPublic1Price] = useState("");
   const [initSupply, setInitSupply] = useState(1);
   const [round, setRound] = useState(0);
+  const [mintTimeIndex, setMintTimeIndex] = useState("");
+  const [mintStartTime, setMintStartTime] = useState("");
+  const [mintEndTime, setMintEndTime] = useState("");
   // const [walletName, setWalletName] = useState("");
 
   const onChangeWhitelist1Price = (e) => {
@@ -69,6 +72,16 @@ export const AdminBamboo = () => {
   };
   const onChangePublic1Price = (e) => {
     setTextPublic1Price(e.target.value);
+  };
+
+  const onChangeMintTimeIndex = (e) => {
+    setMintTimeIndex(e.target.value);
+  };
+  const onChangeMintStartTime = (e) => {
+    setMintStartTime(e.target.value);
+  };
+  const onChangeMintEndTime = (e) => {
+    setMintEndTime(e.target.value);
   };
 
   const setPrice = async (_phase) => {
@@ -95,6 +108,21 @@ export const AdminBamboo = () => {
     console.log(_phase, _price.toString());
 
     await txContract.setMintPrice(_phase, _price.toString());
+  };
+
+  const setMintBlockTime = async () => {
+    if (!account) {
+      alert("지갑 연결 해주세요");
+      return;
+    }
+    if (!contract) {
+      return;
+    }
+    const index = Number(mintTimeIndex);
+    const startTime = Number(mintStartTime);
+    const endTime = Number(mintEndTime);
+
+    await txContract.setMintBlockTime(index, startTime, endTime);
   };
 
   const advancePhase = async () => {
@@ -266,6 +294,36 @@ export const AdminBamboo = () => {
       <div className="adminContent">
         <Button variant="success" onClick={advancePhase}>
           advance phase
+        </Button>
+      </div>
+      <div className="adminContent">
+        setMintBlockTime
+        <input
+          onChange={onChangeMintTimeIndex}
+          value={mintTimeIndex}
+          type="number"
+          placeholder="index"
+        ></input>
+        <input
+          onChange={onChangeMintStartTime}
+          value={mintStartTime}
+          type="number"
+          placeholder="startTime"
+        ></input>
+        <input
+          onChange={onChangeMintEndTime}
+          value={mintEndTime}
+          type="number"
+          placeholder="endTime"
+        ></input>
+        <Button
+          variant="success"
+          onClick={() => {
+            setMintBlockTime();
+            // setPrice(Index.whitelist1);
+          }}
+        >
+          set mint time
         </Button>
       </div>
       <div className="adminContent">
