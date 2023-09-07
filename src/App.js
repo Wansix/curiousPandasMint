@@ -5,6 +5,7 @@ import MintPage from "./screens/MintPage";
 import Main from "./screens/Main";
 import { AdminBamboo } from "./screens/AdminBamboo";
 import { VerifyBamboo } from "./screens/VerifyBamboo";
+import { CheckWhiteList } from "./screens/CheckWhiteList";
 
 function App() {
   return (
@@ -20,6 +21,10 @@ function App() {
           <Route
             path="/VerifyBamboo"
             element={<VerifyBamboo></VerifyBamboo>}
+          ></Route>
+          <Route
+            path="/CheckWhiteList"
+            element={<CheckWhiteList></CheckWhiteList>}
           ></Route>
         </Routes>
       </div>

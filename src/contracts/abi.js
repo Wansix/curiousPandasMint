@@ -444,6 +444,25 @@ export const curiousPandaNFTAbi = [
   {
     inputs: [
       {
+        internalType: "uint256",
+        name: "tokenId",
+        type: "uint256",
+      },
+    ],
+    name: "getHomeTown",
+    outputs: [
+      {
+        internalType: "string",
+        name: "",
+        type: "string",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
         internalType: "address",
         name: "_address",
         type: "address",
@@ -478,6 +497,56 @@ export const curiousPandaNFTAbi = [
   {
     inputs: [],
     name: "getMintPhase",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "_pandaTokenOwner",
+        type: "address",
+      },
+    ],
+    name: "getPandaTokens",
+    outputs: [
+      {
+        components: [
+          {
+            internalType: "uint256",
+            name: "pandaTokenId",
+            type: "uint256",
+          },
+          {
+            internalType: "string",
+            name: "pandaTokenHomeTown",
+            type: "string",
+          },
+        ],
+        internalType: "struct CuriousPandasNFT.PandaTokenData[]",
+        name: "",
+        type: "tuple[]",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    name: "homeTown",
     outputs: [
       {
         internalType: "uint256",
