@@ -1,15 +1,17 @@
 import React from "react";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import WalletConnect from "../components/WalletConnect";
 import * as readContract from "../contracts/index.js";
 
 export const CheckWhiteList = () => {
   const [account, setAccount] = useState("");
-  const [provider, setProvider] = useState();
+  // const [provider, setProvider] = useState();
   const [checkAddress, setCheckAddress] = useState("");
-  const [whitelist1, setWhitelist1] = useState("");
-  const [whitelist2, setWhitelist2] = useState("");
+  // const [whitelist1, setWhitelist1] = useState("");
+  // const [whitelist2, setWhitelist2] = useState("");
+  const [whitelist1CheckBox, setWhitelist1CheckBox] = useState(false);
+  const [whitelist2CheckBox, setWhitelist2CheckBox] = useState(false);
 
   const getWalletName = (_walletName) => {
     // setWalletName(_walletName);
@@ -20,7 +22,7 @@ export const CheckWhiteList = () => {
   };
 
   const getProvider = (_provider) => {
-    setProvider(_provider);
+    // setProvider(_provider);
   };
 
   const onChangeAddress = (e) => {
@@ -32,11 +34,11 @@ export const CheckWhiteList = () => {
     const isWhitelist1 = await readContract.checkWhitelist(0, account);
     const isWhitelist2 = await readContract.checkWhitelist(1, account);
 
-    if (isWhitelist1) setWhitelist1("O");
-    else setWhitelist1("X");
+    if (isWhitelist1) setWhitelist1CheckBox(true);
+    else setWhitelist1CheckBox(false);
 
-    if (isWhitelist2) setWhitelist2("O");
-    else setWhitelist2("X");
+    if (isWhitelist2) setWhitelist2CheckBox(true);
+    else setWhitelist2CheckBox(false);
   };
   useEffect(() => {
     const init = async () => {
@@ -127,9 +129,25 @@ export const CheckWhiteList = () => {
               ></input>
             </div>
             <div className="input-address-container">
-              <div>
-                <div>확정 : {whitelist1}</div>
-                <div>경쟁 : {whitelist2}</div>
+              <div className="input-address-container-box">
+                <div className="input-address-content">확정</div>
+                <div className="input-address-content input-address-content-checkBox">
+                  <input
+                    type="checkbox"
+                    checked={whitelist1CheckBox}
+                    onChange={(e) => {}}
+                  ></input>
+                </div>
+              </div>
+              <div className="input-address-container-box">
+                <div className="input-address-content">경쟁</div>
+                <div className="input-address-content input-address-content-checkBox">
+                  <input
+                    type="checkbox"
+                    checked={whitelist2CheckBox}
+                    onChange={(e) => {}}
+                  ></input>
+                </div>
               </div>
             </div>
           </div>
