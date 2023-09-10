@@ -343,6 +343,19 @@ export const curiousPandaNFTAbi = [
   },
   {
     inputs: [],
+    name: "controlContract",
+    outputs: [
+      {
+        internalType: "address",
+        name: "",
+        type: "address",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
     name: "currentPhase",
     outputs: [
       {
@@ -436,6 +449,25 @@ export const curiousPandaNFTAbi = [
         internalType: "uint256[]",
         name: "",
         type: "uint256[]",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "number",
+        type: "uint256",
+      },
+    ],
+    name: "getEnergy",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
       },
     ],
     stateMutability: "view",
@@ -777,6 +809,25 @@ export const curiousPandaNFTAbi = [
     inputs: [
       {
         internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    name: "previousBlockTime",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
         name: "index",
         type: "uint256",
       },
@@ -794,6 +845,24 @@ export const curiousPandaNFTAbi = [
   {
     inputs: [],
     name: "renounceOwnership",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "number",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "energy",
+        type: "uint256",
+      },
+    ],
+    name: "resetEnergy",
     outputs: [],
     stateMutability: "nonpayable",
     type: "function",
@@ -908,6 +977,19 @@ export const curiousPandaNFTAbi = [
       },
     ],
     name: "setApprovalForAll",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "_controlContract",
+        type: "address",
+      },
+    ],
+    name: "setControlContract",
     outputs: [],
     stateMutability: "nonpayable",
     type: "function",

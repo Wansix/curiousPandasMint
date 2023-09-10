@@ -87,13 +87,13 @@ export const CheckWhiteList = () => {
           <div className="mintPage_main_left-content">
             <div className="mintPage_main_left-content_description-box">
               <div className="mintPage_main_left-content_description-text">
-                확정 WL라운드 - 트랜잭션당 1개, 지갑당 1개
+                확정 WL라운드 - 트랜잭션당 2개, 지갑당 2개
               </div>
               <div className="mintPage_main_left-content_description-text">
                 경쟁 WL라운드 - 트랜잭션당 1개, 지갑당 2개
               </div>
               <div className="mintPage_main_left-content_description-text">
-                퍼블릭 라운드 - 트랙잭션당 1개, 지갑당 2개
+                퍼블릭 라운드 - 트랙잭션당 1개, 지갑당 1개
               </div>
               <div className="mintPage_main_left-content_description-text">
                 1st 물량은 500개. 팀물량 500개이며 남은 2000개의 물량은 마케팅,
