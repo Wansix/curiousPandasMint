@@ -283,19 +283,18 @@ export const AdminBamboo = () => {
         getProvider={getProvider}
         getWalletName={getWalletName}
       ></WalletConnect>
-
       <div className="adminContent">
         <span>
           INIT - WHITELIST1 - WAITING_WHITELIST2 - WHITELIST2 - WAITING_PUBLIC1
           - PUBLIC1 - DONE
         </span>
       </div>
-
       <div className="adminContent">
         <Button variant="success" onClick={advancePhase}>
           advance phase
         </Button>
       </div>
+      index (0, 1, 2) - (whitelis1, whitelis2, public)
       <div className="adminContent">
         setMintBlockTime
         <input
@@ -334,7 +333,6 @@ export const AdminBamboo = () => {
         <span>CurrentPhase :</span>
         <span> {currentPhase}</span>
       </div>
-
       <div className="adminContent">
         <span>Total NFT Amount : </span>
         <span>{totalNFTAmount}</span>
