@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import WalletConnect from "../components/WalletConnect";
 import * as readContract from "../contracts/index.js";
+import Swal from "sweetalert2";
 
 export const CheckWhiteList = () => {
   const [account, setAccount] = useState("");
@@ -39,6 +40,12 @@ export const CheckWhiteList = () => {
 
     if (isWhitelist2) setWhitelist2CheckBox(true);
     else setWhitelist2CheckBox(false);
+
+    Swal.fire({
+      // icon: "error",
+      title: "whitelist check",
+      text: "확인 완료",
+    });
   };
   useEffect(() => {
     const init = async () => {

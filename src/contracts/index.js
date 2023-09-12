@@ -41,6 +41,7 @@ export const initNode = () => {
   let endPoint;
   if (testFlag) endPoint = getRandomEndPointBaobab(randomNum);
   else endPoint = getRandomEndPointMainnet(randomNum);
+  // console.log("endPoint :", endPoint);
   try {
     // console.log("endPoint : ", endPoint);
     provider = new ethers.providers.JsonRpcProvider(endPoint);
