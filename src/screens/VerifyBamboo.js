@@ -5,6 +5,7 @@ import WalletConnect from "../components/WalletConnect";
 import { ethers } from "ethers";
 import * as readContract from "../contracts/index.js";
 import Caver from "caver-js";
+import { useSearchParams } from "react-router-dom";
 
 const verifyMessage = ({ message, address, signature }) => {
   const signerAddr = ethers.utils.verifyMessage(message, signature);
@@ -44,6 +45,7 @@ export const VerifyBamboo = () => {
   const [provider, setProvider] = useState();
   const [walletName, setWalletName] = useState("");
   const [signature, setSignature] = useState("");
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const handleSign = async (e) => {
     e.preventDefault();

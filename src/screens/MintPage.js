@@ -414,7 +414,7 @@ export const MintPage = () => {
                 확정 WL라운드 - 트랜잭션당 2개, 지갑당 2개
               </div>
               <div className="mintPage_main_left-content_description-text">
-                경쟁 WL라운드 - 트랜잭션당 1개, 지갑당 2개
+                경쟁 WL라운드 - 트랜잭션당 1개, 지갑당 1개
               </div>
               <div className="mintPage_main_left-content_description-text">
                 퍼블릭 라운드 - 트랙잭션당 1개, 지갑당 1개
