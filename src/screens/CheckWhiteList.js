@@ -44,11 +44,37 @@ export const CheckWhiteList = () => {
       if (isWhitelist2) setWhitelist2CheckBox(true);
       else setWhitelist2CheckBox(false);
 
-      Swal.fire({
-        // icon: "error",
-        title: "whitelist check",
-        text: "확인 완료",
-      });
+      if (isWhitelist1 === false && isWhitelist2 === false) {
+        Swal.fire({
+          // icon: "error",
+          title: "whitelist check",
+          text: "화이트리스트가 아닙니다. 퍼블릭 민팅에 참여해주세요",
+        });
+      } else if (isWhitelist1 === true && isWhitelist2 === true) {
+        Swal.fire({
+          // icon: "error",
+          title: "whitelist check",
+          text: "확정, 경쟁 화이트리스트입니다.",
+        });
+      } else if (isWhitelist1 === false && isWhitelist2 === true) {
+        Swal.fire({
+          // icon: "error",
+          title: "whitelist check",
+          text: "경쟁 화이트리스트입니다.",
+        });
+      } else if (isWhitelist1 === true && isWhitelist2 === false) {
+        Swal.fire({
+          // icon: "error",
+          title: "whitelist check",
+          text: "확정 화이트리스트입니다.",
+        });
+      } else {
+        Swal.fire({
+          // icon: "error",
+          title: "whitelist check",
+          text: "확인 완료",
+        });
+      }
     } catch (e) {
       Swal.fire({
         icon: "error",
@@ -107,7 +133,7 @@ export const CheckWhiteList = () => {
                 확정 WL라운드 - 트랜잭션당 2개, 지갑당 2개
               </div>
               <div className="mintPage_main_left-content_description-text">
-                경쟁 WL라운드 - 트랜잭션당 1개, 지갑당 1개
+                경쟁 WL라운드 - 트랜잭션당 1개, 지갑당 2개
               </div>
               <div className="mintPage_main_left-content_description-text">
                 퍼블릭 라운드 - 트랙잭션당 1개, 지갑당 1개
