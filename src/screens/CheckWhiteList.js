@@ -32,20 +32,30 @@ export const CheckWhiteList = () => {
   };
 
   const onClickChecking = async () => {
-    const isWhitelist1 = await readContract.checkWhitelist(0, account);
-    const isWhitelist2 = await readContract.checkWhitelist(1, account);
+    setWhitelist1CheckBox(false);
+    setWhitelist2CheckBox(false);
+    try {
+      const isWhitelist1 = await readContract.checkWhitelist(0, account);
+      const isWhitelist2 = await readContract.checkWhitelist(1, account);
 
-    if (isWhitelist1) setWhitelist1CheckBox(true);
-    else setWhitelist1CheckBox(false);
+      if (isWhitelist1) setWhitelist1CheckBox(true);
+      else setWhitelist1CheckBox(false);
 
-    if (isWhitelist2) setWhitelist2CheckBox(true);
-    else setWhitelist2CheckBox(false);
+      if (isWhitelist2) setWhitelist2CheckBox(true);
+      else setWhitelist2CheckBox(false);
 
-    Swal.fire({
-      // icon: "error",
-      title: "whitelist check",
-      text: "확인 완료",
-    });
+      Swal.fire({
+        // icon: "error",
+        title: "whitelist check",
+        text: "확인 완료",
+      });
+    } catch (e) {
+      Swal.fire({
+        icon: "error",
+        title: "invaild address",
+        text: "올바른 주소를 확인해 주세요.",
+      });
+    }
   };
   useEffect(() => {
     const init = async () => {
