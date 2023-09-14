@@ -1,2 +1,4 @@
-export const curiousPandaNFTAddress =
-  "0xEce5e2eA365a943629A7e18004861ebce24214Fa";
+import dotenv from "dotenv";
+dotenv.config();
+
+export const curiousPandaNFTAddress = process.env.REACT_APP_CPD_CONTRACT;
