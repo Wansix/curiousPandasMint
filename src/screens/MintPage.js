@@ -175,7 +175,7 @@ export const MintPage = () => {
         const tx = await contract.batchMintNFT(mintAmount, {
           value: totalPrice.toString(),
           gasPrice: 25000000000,
-          gasLimit: 250000,
+          gasLimit: 500000,
         });
 
         const result = await tx.wait();
