@@ -1,0 +1,43 @@
+{
+  "name": "curiousPandas #98",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/98.png",
+  "dna": "68e2b08c7a1d25ca0c27bcfac4d0dc8f61a98d23",
+  "edition": 98,
+  "date": 1678759938660,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "purple"
+    },
+    {
+      "trait_type": "skin",
+      "value": "basic"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "crying"
+    },
+    {
+      "trait_type": "clothes",
+      "value": "tiger"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "eye patch"
+    },
+    {
+      "trait_type": "hat",
+      "value": "rabbit"
+    },
+    {
+      "trait_type": "objects",
+      "value": "heart"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "bamboo leaf"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

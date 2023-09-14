@@ -1,0 +1,43 @@
+{
+  "name": "curiousPandas #473",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/473.png",
+  "dna": "7e428eed75dabba1207e18989e9a511740aafb3b",
+  "edition": 473,
+  "date": 1678759307742,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "green"
+    },
+    {
+      "trait_type": "skin",
+      "value": "zombie"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "crying"
+    },
+    {
+      "trait_type": "clothes",
+      "value": "none"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "gold monocle"
+    },
+    {
+      "trait_type": "hat",
+      "value": "none"
+    },
+    {
+      "trait_type": "objects",
+      "value": "dog balloon"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "surprised"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

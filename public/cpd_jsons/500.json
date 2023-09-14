@@ -1,0 +1,43 @@
+{
+  "name": "curiousPandas #500",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/500.png",
+  "dna": "688644658398af1625bbee64b9db0e0d43df087a",
+  "edition": 500,
+  "date": 1678758727940,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "heaven"
+    },
+    {
+      "trait_type": "skin",
+      "value": "pink"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "round"
+    },
+    {
+      "trait_type": "clothes",
+      "value": "none"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "navy glasses"
+    },
+    {
+      "trait_type": "hat",
+      "value": "none"
+    },
+    {
+      "trait_type": "objects",
+      "value": "balloon"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "basic mouth"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "curiousPandas #495",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/495.png",
+  "dna": "54b49b87d609322fd9d7cb6b3e5073304b58fbbf",
+  "edition": 495,
+  "date": 1678758883569,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "blue"
+    },
+    {
+      "trait_type": "skin",
+      "value": "pink"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "wound"
+    },
+    {
+      "trait_type": "clothes",
+      "value": "none"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "eye patch"
+    },
+    {
+      "trait_type": "hat",
+      "value": "gold ring"
+    },
+    {
+      "trait_type": "objects",
+      "value": "cotton candy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "bamboo leaf"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

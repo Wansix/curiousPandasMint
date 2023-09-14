@@ -1,0 +1,43 @@
+{
+  "name": "curiousPandas #29",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/29.png",
+  "dna": "0c0232bae54bbc4f4330631c8631cf45566c8781",
+  "edition": 29,
+  "date": 1678762034135,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "lightgreen"
+    },
+    {
+      "trait_type": "skin",
+      "value": "devil"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "wound"
+    },
+    {
+      "trait_type": "clothes",
+      "value": "none"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "eye patch"
+    },
+    {
+      "trait_type": "hat",
+      "value": "none"
+    },
+    {
+      "trait_type": "objects",
+      "value": "dog balloon"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "bamboo leaf"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

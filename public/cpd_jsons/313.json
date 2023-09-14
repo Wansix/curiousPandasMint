@@ -1,0 +1,43 @@
+{
+  "name": "curiousPandas #313",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/313.png",
+  "dna": "6cde112b7232f5909a2e548625fa0a6d47932dff",
+  "edition": 313,
+  "date": 1678763206578,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "lightgreen"
+    },
+    {
+      "trait_type": "skin",
+      "value": "basic"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "angry"
+    },
+    {
+      "trait_type": "clothes",
+      "value": "white fur"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "eye patch"
+    },
+    {
+      "trait_type": "hat",
+      "value": "none"
+    },
+    {
+      "trait_type": "objects",
+      "value": "bamboo"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "cigarette"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

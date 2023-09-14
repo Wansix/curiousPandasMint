@@ -1,0 +1,43 @@
+{
+  "name": "curiousPandas #464",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/464.png",
+  "dna": "0719a6d6c0535d38036cab82432da840b7d861f5",
+  "edition": 464,
+  "date": 1678757927566,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "orange"
+    },
+    {
+      "trait_type": "skin",
+      "value": "zombie"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "wink"
+    },
+    {
+      "trait_type": "clothes",
+      "value": "none"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "silver monocle"
+    },
+    {
+      "trait_type": "hat",
+      "value": "silver ring"
+    },
+    {
+      "trait_type": "objects",
+      "value": "coin"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "fire"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

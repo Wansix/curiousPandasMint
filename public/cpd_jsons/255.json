@@ -1,0 +1,15 @@
+{
+  "name": "curiousPandas #255",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/255.png",
+  "dna": "7a18b003857f73eddb98f92dd537ec96be27fe7d",
+  "edition": 255,
+  "date": 1678697751089,
+  "attributes": [
+    {
+      "trait_type": "special",
+      "value": "golden"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

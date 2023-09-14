@@ -1,0 +1,43 @@
+{
+  "name": "curiousPandas #304",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/304.png",
+  "dna": "aa40fa05b12023fb90d1afcbb0c9da13024feb24",
+  "edition": 304,
+  "date": 1678762481837,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "brown"
+    },
+    {
+      "trait_type": "skin",
+      "value": "mint"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "basic eyes"
+    },
+    {
+      "trait_type": "clothes",
+      "value": "rider"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "none"
+    },
+    {
+      "trait_type": "hat",
+      "value": "none"
+    },
+    {
+      "trait_type": "objects",
+      "value": "mike"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "drooling"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "curiousPandas #338",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/338.png",
+  "dna": "65cac111403f79e1fc0520c101cd9a74b7207522",
+  "edition": 338,
+  "date": 1678761642261,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "orange"
+    },
+    {
+      "trait_type": "skin",
+      "value": "ninza"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "basic eyes"
+    },
+    {
+      "trait_type": "clothes",
+      "value": "rider"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "navy glasses"
+    },
+    {
+      "trait_type": "hat",
+      "value": "none"
+    },
+    {
+      "trait_type": "objects",
+      "value": "balloon"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "drooling"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

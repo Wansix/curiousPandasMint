@@ -1,0 +1,43 @@
+{
+  "name": "curiousPandas #131",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/131.png",
+  "dna": "2e3b73675aafeb69db69f4520da50e6cc5dc0781",
+  "edition": 131,
+  "date": 1678763192235,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "zombie"
+    },
+    {
+      "trait_type": "skin",
+      "value": "mud"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "heart eyes"
+    },
+    {
+      "trait_type": "clothes",
+      "value": "rider"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "navy glasses"
+    },
+    {
+      "trait_type": "hat",
+      "value": "none"
+    },
+    {
+      "trait_type": "objects",
+      "value": "fork"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "pacifier"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

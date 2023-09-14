@@ -1,0 +1,43 @@
+{
+  "name": "curiousPandas #344",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/344.png",
+  "dna": "951f4bf4d4733d8ac61afd52b05014aeffb9e71f",
+  "edition": 344,
+  "date": 1678759030633,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "green"
+    },
+    {
+      "trait_type": "skin",
+      "value": "alien"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sparkling"
+    },
+    {
+      "trait_type": "clothes",
+      "value": "mint T"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "silver monocle"
+    },
+    {
+      "trait_type": "hat",
+      "value": "none"
+    },
+    {
+      "trait_type": "objects",
+      "value": "dog balloon"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "surprised"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

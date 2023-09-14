@@ -1,0 +1,43 @@
+{
+  "name": "curiousPandas #165",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/165.png",
+  "dna": "2a22986767ba676a9cec9d86d703bfbc602d4259",
+  "edition": 165,
+  "date": 1678761485225,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "sky"
+    },
+    {
+      "trait_type": "skin",
+      "value": "basic"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "wink"
+    },
+    {
+      "trait_type": "clothes",
+      "value": "rider"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "gold monocle"
+    },
+    {
+      "trait_type": "hat",
+      "value": "none"
+    },
+    {
+      "trait_type": "objects",
+      "value": "mike"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "drooling"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

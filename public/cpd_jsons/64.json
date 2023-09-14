@@ -1,0 +1,43 @@
+{
+  "name": "curiousPandas #64",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/64.png",
+  "dna": "b2ae57ec25c76f6ca40d84cfb74c6640a3a9ca05",
+  "edition": 64,
+  "date": 1678760229352,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "heaven"
+    },
+    {
+      "trait_type": "skin",
+      "value": "brown"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "basic eyes"
+    },
+    {
+      "trait_type": "clothes",
+      "value": "none"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "none"
+    },
+    {
+      "trait_type": "hat",
+      "value": "ribbon"
+    },
+    {
+      "trait_type": "objects",
+      "value": "balloon"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "basic mouth"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

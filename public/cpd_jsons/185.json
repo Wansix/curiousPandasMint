@@ -1,0 +1,43 @@
+{
+  "name": "curiousPandas #185",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/185.png",
+  "dna": "2cd764553d4c2a7d365cebf522615f598d80521c",
+  "edition": 185,
+  "date": 1678757248254,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "blue"
+    },
+    {
+      "trait_type": "skin",
+      "value": "ninza"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "angry"
+    },
+    {
+      "trait_type": "clothes",
+      "value": "rider"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "none"
+    },
+    {
+      "trait_type": "hat",
+      "value": "gold ring"
+    },
+    {
+      "trait_type": "objects",
+      "value": "bottle1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "basic mouth"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

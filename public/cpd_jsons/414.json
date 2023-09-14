@@ -1,0 +1,43 @@
+{
+  "name": "curiousPandas #414",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/414.png",
+  "dna": "47ac10a74a2c2fe1ef3e5043e02795ea2b85fc92",
+  "edition": 414,
+  "date": 1678759954891,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "sky"
+    },
+    {
+      "trait_type": "skin",
+      "value": "alien"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "angry"
+    },
+    {
+      "trait_type": "clothes",
+      "value": "white T"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "silver monocle"
+    },
+    {
+      "trait_type": "hat",
+      "value": "ribbon"
+    },
+    {
+      "trait_type": "objects",
+      "value": "dog balloon"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "drooling"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "curiousPandas #381",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/381.png",
+  "dna": "3b16c9e866e9e1ce65d63a4cab0d91ac25300a94",
+  "edition": 381,
+  "date": 1678760981892,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "blue"
+    },
+    {
+      "trait_type": "skin",
+      "value": "mint"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "angry"
+    },
+    {
+      "trait_type": "clothes",
+      "value": "none"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "gold monocle"
+    },
+    {
+      "trait_type": "hat",
+      "value": "none"
+    },
+    {
+      "trait_type": "objects",
+      "value": "bottle"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "bamboo leaf"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

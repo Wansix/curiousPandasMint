@@ -1,0 +1,43 @@
+{
+  "name": "curiousPandas #246",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/246.png",
+  "dna": "0153f5a0de03a173fa81b0dfd2190f0c5868cd7f",
+  "edition": 246,
+  "date": 1678757087473,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "orange"
+    },
+    {
+      "trait_type": "skin",
+      "value": "alien"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "wink"
+    },
+    {
+      "trait_type": "clothes",
+      "value": "tiger"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "none"
+    },
+    {
+      "trait_type": "hat",
+      "value": "none"
+    },
+    {
+      "trait_type": "objects",
+      "value": "stick"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "bamboo leaf"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

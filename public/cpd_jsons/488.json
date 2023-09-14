@@ -1,0 +1,43 @@
+{
+  "name": "curiousPandas #488",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/488.png",
+  "dna": "bab995a9faf4b129088e54dc75fafe60338b6eb1",
+  "edition": 488,
+  "date": 1678758829263,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "forest"
+    },
+    {
+      "trait_type": "skin",
+      "value": "mud"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "wink"
+    },
+    {
+      "trait_type": "clothes",
+      "value": "none"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "gold monocle"
+    },
+    {
+      "trait_type": "hat",
+      "value": "none"
+    },
+    {
+      "trait_type": "objects",
+      "value": "heart"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "drooling"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "curiousPandas #274",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/274.png",
+  "dna": "fbbca001dd83842e0ca82703f66a5fb1e2004e6a",
+  "edition": 274,
+  "date": 1678762582598,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "lightgreen"
+    },
+    {
+      "trait_type": "skin",
+      "value": "zombie"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "crying"
+    },
+    {
+      "trait_type": "clothes",
+      "value": "devils tail"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "none"
+    },
+    {
+      "trait_type": "hat",
+      "value": "none"
+    },
+    {
+      "trait_type": "objects",
+      "value": "balloon"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "bamboo leaf"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

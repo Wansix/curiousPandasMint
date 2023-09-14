@@ -1,0 +1,43 @@
+{
+  "name": "curiousPandas #305",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/305.png",
+  "dna": "549ffde09fc2a588c3540a1554d24cfafd32c729",
+  "edition": 305,
+  "date": 1678758002194,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "purple"
+    },
+    {
+      "trait_type": "skin",
+      "value": "pink"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "angry"
+    },
+    {
+      "trait_type": "clothes",
+      "value": "angel wings"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "eye patch"
+    },
+    {
+      "trait_type": "hat",
+      "value": "none"
+    },
+    {
+      "trait_type": "objects",
+      "value": "meat"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "match1"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

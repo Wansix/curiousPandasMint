@@ -1,0 +1,43 @@
+{
+  "name": "curiousPandas #130",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/130.png",
+  "dna": "c5adf1c883cdb5568a4c6ae4610ae08d0b8cbcdf",
+  "edition": 130,
+  "date": 1678761048592,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "gray"
+    },
+    {
+      "trait_type": "skin",
+      "value": "robot"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "angry"
+    },
+    {
+      "trait_type": "clothes",
+      "value": "tiger"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "none"
+    },
+    {
+      "trait_type": "hat",
+      "value": "silver ring"
+    },
+    {
+      "trait_type": "objects",
+      "value": "dagger"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "teeth"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

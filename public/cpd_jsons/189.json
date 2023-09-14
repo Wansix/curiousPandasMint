@@ -1,0 +1,43 @@
+{
+  "name": "curiousPandas #189",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/189.png",
+  "dna": "bf9b57e5bc4f693df8a968487a4203559fe6b538",
+  "edition": 189,
+  "date": 1678763023308,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "green"
+    },
+    {
+      "trait_type": "skin",
+      "value": "alien"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "angry"
+    },
+    {
+      "trait_type": "clothes",
+      "value": "angel wings"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "silver glasses"
+    },
+    {
+      "trait_type": "hat",
+      "value": "none"
+    },
+    {
+      "trait_type": "objects",
+      "value": "bamboo"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "match1"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

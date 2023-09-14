@@ -1,0 +1,43 @@
+{
+  "name": "curiousPandas #134",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/134.png",
+  "dna": "6c108cad390de0b2f4bb0a270f24eb9bc351d480",
+  "edition": 134,
+  "date": 1678761529202,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "green"
+    },
+    {
+      "trait_type": "skin",
+      "value": "pink"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "angry"
+    },
+    {
+      "trait_type": "clothes",
+      "value": "tiger"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "silver monocle"
+    },
+    {
+      "trait_type": "hat",
+      "value": "none"
+    },
+    {
+      "trait_type": "objects",
+      "value": "bamboo"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "drooling"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

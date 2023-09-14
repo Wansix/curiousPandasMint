@@ -1,0 +1,43 @@
+{
+  "name": "curiousPandas #258",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/258.png",
+  "dna": "87ce32201c28a52a483dd8701f2142f3408a7127",
+  "edition": 258,
+  "date": 1678760653347,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "lightgreen"
+    },
+    {
+      "trait_type": "skin",
+      "value": "alien"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "wink"
+    },
+    {
+      "trait_type": "clothes",
+      "value": "white T"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "none"
+    },
+    {
+      "trait_type": "hat",
+      "value": "none"
+    },
+    {
+      "trait_type": "objects",
+      "value": "cotton candy"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "teeth"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

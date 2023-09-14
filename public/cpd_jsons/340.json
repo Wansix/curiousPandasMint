@@ -1,0 +1,43 @@
+{
+  "name": "curiousPandas #340",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/340.png",
+  "dna": "e6eb4d164ffbcb8c0d4c95d0eb964202cefee710",
+  "edition": 340,
+  "date": 1678758618027,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "sky"
+    },
+    {
+      "trait_type": "skin",
+      "value": "devil"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "round"
+    },
+    {
+      "trait_type": "clothes",
+      "value": "none"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "none"
+    },
+    {
+      "trait_type": "hat",
+      "value": "gold ring"
+    },
+    {
+      "trait_type": "objects",
+      "value": "bottle1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "teeth"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

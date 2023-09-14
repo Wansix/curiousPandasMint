@@ -1,0 +1,43 @@
+{
+  "name": "curiousPandas #423",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/423.png",
+  "dna": "b28ddce7ee2c3cd22600b16cb28e7bdb4fffac57",
+  "edition": 423,
+  "date": 1678759474677,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "purple"
+    },
+    {
+      "trait_type": "skin",
+      "value": "brown"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "wink"
+    },
+    {
+      "trait_type": "clothes",
+      "value": "mint T"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "none"
+    },
+    {
+      "trait_type": "hat",
+      "value": "none"
+    },
+    {
+      "trait_type": "objects",
+      "value": "mike"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "pacifier"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

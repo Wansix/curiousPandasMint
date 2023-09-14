@@ -1,0 +1,15 @@
+{
+  "name": "curiousPandas #42",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/42.png",
+  "dna": "b6812d919a3aa900da3982beb2233a3048ff57fe",
+  "edition": 42,
+  "date": 1678697751840,
+  "attributes": [
+    {
+      "trait_type": "special",
+      "value": "rainbow"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

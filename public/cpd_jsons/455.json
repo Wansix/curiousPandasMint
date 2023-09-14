@@ -1,0 +1,43 @@
+{
+  "name": "curiousPandas #455",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/455.png",
+  "dna": "47a3b506ca8e779d097f387179629ef6ac8292fe",
+  "edition": 455,
+  "date": 1678763071212,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "blue"
+    },
+    {
+      "trait_type": "skin",
+      "value": "basic"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "heart eyes"
+    },
+    {
+      "trait_type": "clothes",
+      "value": "rider"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "navy glasses"
+    },
+    {
+      "trait_type": "hat",
+      "value": "silver ring"
+    },
+    {
+      "trait_type": "objects",
+      "value": "dog balloon"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "bamboo leaf"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

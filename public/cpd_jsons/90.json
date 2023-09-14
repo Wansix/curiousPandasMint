@@ -1,0 +1,43 @@
+{
+  "name": "curiousPandas #90",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/90.png",
+  "dna": "5552859576eb134afe5835b7b76a879520ffce82",
+  "edition": 90,
+  "date": 1678762293812,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "sky"
+    },
+    {
+      "trait_type": "skin",
+      "value": "black"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "angry"
+    },
+    {
+      "trait_type": "clothes",
+      "value": "telescope"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "none"
+    },
+    {
+      "trait_type": "hat",
+      "value": "none"
+    },
+    {
+      "trait_type": "objects",
+      "value": "mike"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "drooling"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

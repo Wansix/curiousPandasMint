@@ -1,0 +1,43 @@
+{
+  "name": "curiousPandas #204",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/204.png",
+  "dna": "9f3356cef8daffb2dbe43a45f407bc8f0386787a",
+  "edition": 204,
+  "date": 1678761023429,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "purple"
+    },
+    {
+      "trait_type": "skin",
+      "value": "devil"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "basic eyes"
+    },
+    {
+      "trait_type": "clothes",
+      "value": "telescope"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "none"
+    },
+    {
+      "trait_type": "hat",
+      "value": "none"
+    },
+    {
+      "trait_type": "objects",
+      "value": "dog balloon"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "drooling"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

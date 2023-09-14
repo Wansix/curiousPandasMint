@@ -1,0 +1,43 @@
+{
+  "name": "curiousPandas #88",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/88.png",
+  "dna": "18f7a30b3f521f48b37e0da02b274c74c63ea852",
+  "edition": 88,
+  "date": 1678762108660,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "gold"
+    },
+    {
+      "trait_type": "skin",
+      "value": "zombie"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "heart eyes"
+    },
+    {
+      "trait_type": "clothes",
+      "value": "black T"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "silver glasses"
+    },
+    {
+      "trait_type": "hat",
+      "value": "none"
+    },
+    {
+      "trait_type": "objects",
+      "value": "meat"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "bamboo leaf"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

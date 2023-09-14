@@ -1,0 +1,43 @@
+{
+  "name": "curiousPandas #339",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/339.png",
+  "dna": "b6c0e8f3e6537d273860d6f655dcc52922be09a6",
+  "edition": 339,
+  "date": 1678759125334,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "brown"
+    },
+    {
+      "trait_type": "skin",
+      "value": "ninza"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "crying"
+    },
+    {
+      "trait_type": "clothes",
+      "value": "none"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "gold monocle"
+    },
+    {
+      "trait_type": "hat",
+      "value": "none"
+    },
+    {
+      "trait_type": "objects",
+      "value": "meat"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "pacifier"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

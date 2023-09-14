@@ -1,0 +1,43 @@
+{
+  "name": "curiousPandas #32",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/32.png",
+  "dna": "15b727850a6ee7fbc5aeca5b57111a1d74bb4389",
+  "edition": 32,
+  "date": 1678761858749,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "lightgreen"
+    },
+    {
+      "trait_type": "skin",
+      "value": "basic"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "angry"
+    },
+    {
+      "trait_type": "clothes",
+      "value": "black T"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "silver monocle"
+    },
+    {
+      "trait_type": "hat",
+      "value": "none"
+    },
+    {
+      "trait_type": "objects",
+      "value": "bone"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "cigarette"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

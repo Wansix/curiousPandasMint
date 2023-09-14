@@ -1,0 +1,43 @@
+{
+  "name": "curiousPandas #30",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/30.png",
+  "dna": "01f5748ecff57517ea445cb66e508a1e5d905141",
+  "edition": 30,
+  "date": 1678761439987,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "blue"
+    },
+    {
+      "trait_type": "skin",
+      "value": "robot"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "round"
+    },
+    {
+      "trait_type": "clothes",
+      "value": "angel wings"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "gold monocle"
+    },
+    {
+      "trait_type": "hat",
+      "value": "gold ring"
+    },
+    {
+      "trait_type": "objects",
+      "value": "bamboo"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "match1"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

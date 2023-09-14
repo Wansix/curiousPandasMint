@@ -1,0 +1,43 @@
+{
+  "name": "curiousPandas #435",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/435.png",
+  "dna": "c9db91b105f5a1d291999c40cabbd37c251deb6b",
+  "edition": 435,
+  "date": 1678759040918,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "gray"
+    },
+    {
+      "trait_type": "skin",
+      "value": "robot"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "crying"
+    },
+    {
+      "trait_type": "clothes",
+      "value": "mint T"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "none"
+    },
+    {
+      "trait_type": "hat",
+      "value": "silver ring"
+    },
+    {
+      "trait_type": "objects",
+      "value": "bamboo"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "match1"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "curiousPandas #376",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/376.png",
+  "dna": "5d812a5eb88852b66e0115c73363f42cd7248852",
+  "edition": 376,
+  "date": 1678758810522,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "blue"
+    },
+    {
+      "trait_type": "skin",
+      "value": "robot"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "crying"
+    },
+    {
+      "trait_type": "clothes",
+      "value": "none"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "silver glasses"
+    },
+    {
+      "trait_type": "hat",
+      "value": "none"
+    },
+    {
+      "trait_type": "objects",
+      "value": "stick"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "bamboo leaf"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

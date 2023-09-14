@@ -1,0 +1,43 @@
+{
+  "name": "curiousPandas #377",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/377.png",
+  "dna": "ff9b904bc35cc60e8c393509b8d5e0a90b6eee2e",
+  "edition": 377,
+  "date": 1678762924041,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "green"
+    },
+    {
+      "trait_type": "skin",
+      "value": "mud"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sparkling"
+    },
+    {
+      "trait_type": "clothes",
+      "value": "mint T"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "none"
+    },
+    {
+      "trait_type": "hat",
+      "value": "none"
+    },
+    {
+      "trait_type": "objects",
+      "value": "knife"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "cigarette"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

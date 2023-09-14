@@ -1,0 +1,43 @@
+{
+  "name": "curiousPandas #213",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/213.png",
+  "dna": "cf349f8971d29fc449d1aaf0f692fd725d43f246",
+  "edition": 213,
+  "date": 1678758451119,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "sky"
+    },
+    {
+      "trait_type": "skin",
+      "value": "black"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "heart eyes"
+    },
+    {
+      "trait_type": "clothes",
+      "value": "none"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "silver glasses"
+    },
+    {
+      "trait_type": "hat",
+      "value": "gold ring"
+    },
+    {
+      "trait_type": "objects",
+      "value": "bone"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "basic mouth"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

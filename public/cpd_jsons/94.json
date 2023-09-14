@@ -1,0 +1,43 @@
+{
+  "name": "curiousPandas #94",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/94.png",
+  "dna": "bc3b0de3a1f711f1e1a2b757d57acd5c868ae52e",
+  "edition": 94,
+  "date": 1678759762063,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "orange"
+    },
+    {
+      "trait_type": "skin",
+      "value": "mint"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "basic eyes"
+    },
+    {
+      "trait_type": "clothes",
+      "value": "none"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "silver glasses"
+    },
+    {
+      "trait_type": "hat",
+      "value": "ribbon"
+    },
+    {
+      "trait_type": "objects",
+      "value": "balloon"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "cigarette"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

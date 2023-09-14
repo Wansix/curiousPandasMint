@@ -1,0 +1,43 @@
+{
+  "name": "curiousPandas #471",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/471.png",
+  "dna": "387e59c99f447e345ee08c262e079e21afb175b5",
+  "edition": 471,
+  "date": 1678758181385,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "sky"
+    },
+    {
+      "trait_type": "skin",
+      "value": "black"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "angry"
+    },
+    {
+      "trait_type": "clothes",
+      "value": "none"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "none"
+    },
+    {
+      "trait_type": "hat",
+      "value": "angel ring"
+    },
+    {
+      "trait_type": "objects",
+      "value": "dagger"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "teeth"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "curiousPandas #496",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/496.png",
+  "dna": "440c405c28b34d219da4d07e98994cf44488c1d8",
+  "edition": 496,
+  "date": 1678763155456,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "forest"
+    },
+    {
+      "trait_type": "skin",
+      "value": "rainbow"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "sparkling"
+    },
+    {
+      "trait_type": "clothes",
+      "value": "none"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "silver monocle"
+    },
+    {
+      "trait_type": "hat",
+      "value": "silver ring"
+    },
+    {
+      "trait_type": "objects",
+      "value": "dagger"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "bamboo leaf"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

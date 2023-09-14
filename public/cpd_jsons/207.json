@@ -1,0 +1,43 @@
+{
+  "name": "curiousPandas #207",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/207.png",
+  "dna": "deb944d2f042f58289378c9b180dd3db64872d03",
+  "edition": 207,
+  "date": 1678761711213,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "gray"
+    },
+    {
+      "trait_type": "skin",
+      "value": "devil"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "basic eyes"
+    },
+    {
+      "trait_type": "clothes",
+      "value": "mint T"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "none"
+    },
+    {
+      "trait_type": "hat",
+      "value": "none"
+    },
+    {
+      "trait_type": "objects",
+      "value": "meat"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "basic mouth"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

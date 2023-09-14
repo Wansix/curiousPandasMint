@@ -1,0 +1,43 @@
+{
+  "name": "curiousPandas #402",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/402.png",
+  "dna": "f1541497c10b633455781d757e2058e404ca232d",
+  "edition": 402,
+  "date": 1678758000091,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "purple"
+    },
+    {
+      "trait_type": "skin",
+      "value": "mud"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "wound"
+    },
+    {
+      "trait_type": "clothes",
+      "value": "none"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "eye patch"
+    },
+    {
+      "trait_type": "hat",
+      "value": "gold ring"
+    },
+    {
+      "trait_type": "objects",
+      "value": "coin"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "bamboo leaf"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

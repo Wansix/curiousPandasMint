@@ -1,0 +1,43 @@
+{
+  "name": "curiousPandas #4",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/4.png",
+  "dna": "d45d394bd3621e7815410abcc2ab2871b3d9e3b6",
+  "edition": 4,
+  "date": 1678757857459,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "brown"
+    },
+    {
+      "trait_type": "skin",
+      "value": "mud"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "basic eyes"
+    },
+    {
+      "trait_type": "clothes",
+      "value": "rider"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "silver glasses"
+    },
+    {
+      "trait_type": "hat",
+      "value": "none"
+    },
+    {
+      "trait_type": "objects",
+      "value": "knife"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "bamboo leaf"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

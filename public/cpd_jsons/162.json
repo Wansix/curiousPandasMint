@@ -1,0 +1,43 @@
+{
+  "name": "curiousPandas #162",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/162.png",
+  "dna": "754efa44f9f96e8c897477fb246d6d2811e8ab12",
+  "edition": 162,
+  "date": 1678759249310,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "green"
+    },
+    {
+      "trait_type": "skin",
+      "value": "mud"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "heart eyes"
+    },
+    {
+      "trait_type": "clothes",
+      "value": "angel wings"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "none"
+    },
+    {
+      "trait_type": "hat",
+      "value": "ribbon"
+    },
+    {
+      "trait_type": "objects",
+      "value": "stick"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "basic mouth"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

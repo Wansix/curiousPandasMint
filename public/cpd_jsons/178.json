@@ -1,0 +1,43 @@
+{
+  "name": "curiousPandas #178",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/178.png",
+  "dna": "90dcf3f9aa52867596777c5d923f482f6eb8586b",
+  "edition": 178,
+  "date": 1678760576862,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "purple"
+    },
+    {
+      "trait_type": "skin",
+      "value": "ninza"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "basic eyes"
+    },
+    {
+      "trait_type": "clothes",
+      "value": "black T"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "none"
+    },
+    {
+      "trait_type": "hat",
+      "value": "explore hat"
+    },
+    {
+      "trait_type": "objects",
+      "value": "knife"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "pacifier"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

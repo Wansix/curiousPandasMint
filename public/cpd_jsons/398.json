@@ -1,0 +1,43 @@
+{
+  "name": "curiousPandas #398",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/398.png",
+  "dna": "e49bd47b826a391a3d7c5fac06dc79bf1c874ee6",
+  "edition": 398,
+  "date": 1678760936349,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "sky"
+    },
+    {
+      "trait_type": "skin",
+      "value": "gold"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "basic eyes"
+    },
+    {
+      "trait_type": "clothes",
+      "value": "white fur"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "silver glasses"
+    },
+    {
+      "trait_type": "hat",
+      "value": "explore hat"
+    },
+    {
+      "trait_type": "objects",
+      "value": "bamboo"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "cigarette"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}
