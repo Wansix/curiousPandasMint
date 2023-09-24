@@ -1,0 +1,43 @@
+{
+  "name": "curiousPandas #504",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/504.png",
+  "dna": "d697b5ddafe7b97b4dcce37a74436e4bea8f487e",
+  "edition": 504,
+  "date": 1678761339306,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "blue"
+    },
+    {
+      "trait_type": "skin",
+      "value": "mint"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "angry"
+    },
+    {
+      "trait_type": "clothes",
+      "value": "telescope"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "navy glasses"
+    },
+    {
+      "trait_type": "hat",
+      "value": "none"
+    },
+    {
+      "trait_type": "objects",
+      "value": "mike"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "basic mouth"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

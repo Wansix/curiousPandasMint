@@ -1,0 +1,43 @@
+{
+  "name": "curiousPandas #520",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/520.png",
+  "dna": "9e45dde64c300a402e7fce76b0d60ddee7fdf9e5",
+  "edition": 520,
+  "date": 1678758010453,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "gray"
+    },
+    {
+      "trait_type": "skin",
+      "value": "pink"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "heart eyes"
+    },
+    {
+      "trait_type": "clothes",
+      "value": "white T"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "gold monocle"
+    },
+    {
+      "trait_type": "hat",
+      "value": "rabbit"
+    },
+    {
+      "trait_type": "objects",
+      "value": "bottle1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "surprised"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

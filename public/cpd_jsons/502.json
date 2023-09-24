@@ -1,0 +1,43 @@
+{
+  "name": "curiousPandas #502",
+  "description": "curiousPandas",
+  "image": "http://curiouspandasnft.com/mintImage/502.png",
+  "dna": "770017ae5e808a5b73852bcf9154d083b1595587",
+  "edition": 502,
+  "date": 1678761273377,
+  "attributes": [
+    {
+      "trait_type": "background",
+      "value": "sky"
+    },
+    {
+      "trait_type": "skin",
+      "value": "ninza"
+    },
+    {
+      "trait_type": "eyes",
+      "value": "basic eyes"
+    },
+    {
+      "trait_type": "clothes",
+      "value": "rider"
+    },
+    {
+      "trait_type": "glasses",
+      "value": "none"
+    },
+    {
+      "trait_type": "hat",
+      "value": "none"
+    },
+    {
+      "trait_type": "objects",
+      "value": "bamboo"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "surprised"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}
