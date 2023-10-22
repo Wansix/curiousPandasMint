@@ -16,7 +16,8 @@ const bambooApiURL = process.env.REACT_APP_BAMBOO_API;
 
 const CLIENT_ID = process.env.REACT_APP_DISCORD_CLIENT_ID; // discord bot ID
 const CLIENT_SECRET = process.env.REACT_APP_DISCORD_CLIENT_SECRET; //bot secret
-const REDIRECT_URL = process.env.REACT_APP_DISCORD_REDIRECT_URL;
+const REDIRECT_URL =
+  "https://discord.com/api/oauth2/authorize?client_id=1161267960661409832&redirect_uri=https%3A%2F%2Fcuriouspandasnft.com%2Fverify_NFT_holder&response_type=code&scope=identify"; //process.env.REACT_APP_DISCORD_REDIRECT_URL;
 
 const messageString = "curiousPandas verify";
 
