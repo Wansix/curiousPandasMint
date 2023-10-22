@@ -5,6 +5,7 @@ import MintPage from "./screens/MintPage";
 import Main from "./screens/Main";
 import { AdminBamboo } from "./screens/AdminBamboo";
 import { VerifyBamboo } from "./screens/VerifyBamboo";
+import { VerifyNFTHolder } from "./screens/VerifyNFTHolder";
 import { CheckWhiteList } from "./screens/CheckWhiteList";
 
 function App() {
@@ -22,6 +23,10 @@ function App() {
           <Route
             path="/VerifyBamboo"
             element={<VerifyBamboo></VerifyBamboo>}
+          ></Route>
+          <Route
+            path="/verify_nft_holder"
+            element={<VerifyNFTHolder></VerifyNFTHolder>}
           ></Route>
           <Route
             path="/CheckWhiteList"
