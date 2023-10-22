@@ -16,8 +16,6 @@ const bambooApiURL = process.env.REACT_APP_BAMBOO_API;
 
 const CLIENT_ID = process.env.REACT_APP_DISCORD_CLIENT_ID; // discord bot ID
 const CLIENT_SECRET = process.env.REACT_APP_DISCORD_CLIENT_SECRET; //bot secret
-const REDIRECT_URL =
-  "https://discord.com/api/oauth2/authorize?client_id=1161267960661409832&redirect_uri=https%3A%2F%2Fcuriouspandasnft.com%2Fverify_NFT_holder&response_type=code&scope=identify"; //process.env.REACT_APP_DISCORD_REDIRECT_URL;
 
 const messageString = "curiousPandas verify";
 
@@ -129,10 +127,8 @@ export const VerifyNFTHolder = () => {
     if (code === null) return;
 
     const url = "https://discord.com/api/oauth2/token";
-    console.log("code : ", code);
-    console.log("CLIENMT_ID : ", CLIENT_ID);
-    console.log("CLIENT_SECRET:", CLIENT_SECRET);
-    console.log("REDIECT : ", REDIRECT_URL);
+    const REDIRECT_URI = "https://curiouspandasnft.com/verify_NFT_holder";
+
     const oauthResult = await fetch(url, {
       method: "POST",
       body: new URLSearchParams({
@@ -140,7 +136,7 @@ export const VerifyNFTHolder = () => {
         client_secret: CLIENT_SECRET,
         code,
         grant_type: "authorization_code",
-        redirect_uri: REDIRECT_URL,
+        redirect_uri: REDIRECT_URI,
         scope: "identify",
       }),
       headers: {
@@ -148,10 +144,7 @@ export const VerifyNFTHolder = () => {
       },
     });
 
-    console.log("oauthResult: ", oauthResult);
     const oauthData = await oauthResult.json();
-
-    console.log("oauthData :", oauthData);
 
     // discord user data 얻기
     const userResult = await fetch("https://discord.com/api/users/@me", {
@@ -160,10 +153,7 @@ export const VerifyNFTHolder = () => {
       },
     });
 
-    console.log("userResult : ", userResult);
-
     const userData = await userResult.json();
-    console.log("userData : ", userData);
     setDiscordUser(userData);
   };
 
@@ -184,7 +174,7 @@ export const VerifyNFTHolder = () => {
         backgroundColor: "beige",
       }}
     >
-      <a href="https://discord.com/api/oauth2/authorize?client_id=1161267960661409832&redirect_uri=https%3A%2F%2Fcuriouspandasnft.com%2Fverify_NFT_holder&response_type=code&scope=identify">
+      <a href="https://discord.com/api/oauth2/authorize?client_id=1161267960661409832&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fverify_NFT_holder&response_type=code&scope=identify">
         ss
       </a>
       <WalletConnect
