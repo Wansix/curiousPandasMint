@@ -128,6 +128,10 @@ export const VerifyNFTHolder = () => {
     if (code === null) return;
 
     const url = "https://discord.com/api/oauth2/token";
+    console.log("code : ", code);
+    console.log("CLIENMT_ID : ", CLIENT_ID);
+    console.log("CLIENT_SECRET:", CLIENT_SECRET);
+    console.log("REDIECT : ", REDIRECT_URL);
     const oauthResult = await fetch(url, {
       method: "POST",
       body: new URLSearchParams({
@@ -140,10 +144,14 @@ export const VerifyNFTHolder = () => {
       }),
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
+        withCredentials: true,
       },
     });
 
+    console.log("oauthResult: ", oauthResult);
     const oauthData = await oauthResult.json();
+
+    console.log("oauthData :", oauthData);
 
     // discord user data 얻기
     const userResult = await fetch("https://discord.com/api/users/@me", {
@@ -152,7 +160,10 @@ export const VerifyNFTHolder = () => {
       },
     });
 
+    console.log("userResult : ", userResult);
+
     const userData = await userResult.json();
+    console.log("userData : ", userData);
     setDiscordUser(userData);
   };
 
