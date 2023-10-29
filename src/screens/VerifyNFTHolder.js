@@ -13,7 +13,7 @@ axios.defaults.withCredentials = true;
 
 const headers = { withCredentials: true };
 const bambooApiURL = process.env.REACT_APP_BAMBOO_API;
-
+// "http://localhost:8080";
 const CLIENT_ID = process.env.REACT_APP_DISCORD_CLIENT_ID; // discord bot ID
 const CLIENT_SECRET = process.env.REACT_APP_DISCORD_CLIENT_SECRET; //bot secret
 
@@ -128,6 +128,7 @@ export const VerifyNFTHolder = () => {
 
     const url = "https://discord.com/api/oauth2/token";
     const REDIRECT_URI = "https://curiouspandasnft.com/verify_NFT_holder";
+    // "http://localhost:3000/verify_NFT_holder";
 
     const oauthResult = await fetch(url, {
       method: "POST",
