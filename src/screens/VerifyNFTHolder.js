@@ -111,7 +111,7 @@ export const VerifyNFTHolder = () => {
       if (result.data.success) {
         Swal.fire({
           icon: "success",
-          title: "verify success",
+          title: "인증 완료",
           text: result.data.message,
         });
         // alert(result.data.message);
@@ -143,7 +143,7 @@ export const VerifyNFTHolder = () => {
     const baseImageUrl = `http://curiouspandasnft.com/mintImage/`;
     if (_address) {
       const tokens = await readContract.getPandaTokens(_address);
-      console.log("tokens : ", tokens);
+      // console.log("tokens : ", tokens);
 
       const imageList = [];
       const nftTokens = [];
@@ -181,32 +181,40 @@ export const VerifyNFTHolder = () => {
     const REDIRECT_URI = "https://curiouspandasnft.com/verify_NFT_holder";
     // "http://localhost:3000/verify_NFT_holder";
 
-    const oauthResult = await fetch(url, {
-      method: "POST",
-      body: new URLSearchParams({
-        client_id: CLIENT_ID,
-        client_secret: CLIENT_SECRET,
-        code,
-        grant_type: "authorization_code",
-        redirect_uri: REDIRECT_URI,
-        scope: "identify",
-      }),
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-    });
+    try {
+      const oauthResult = await fetch(url, {
+        method: "POST",
+        body: new URLSearchParams({
+          client_id: CLIENT_ID,
+          client_secret: CLIENT_SECRET,
+          code,
+          grant_type: "authorization_code",
+          redirect_uri: REDIRECT_URI,
+          scope: "identify",
+        }),
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+      });
 
-    const oauthData = await oauthResult.json();
+      const oauthData = await oauthResult.json();
 
-    // discord user data 얻기
-    const userResult = await fetch("https://discord.com/api/users/@me", {
-      headers: {
-        authorization: `${oauthData.token_type} ${oauthData.access_token}`,
-      },
-    });
+      // discord user data 얻기
+      const userResult = await fetch("https://discord.com/api/users/@me", {
+        headers: {
+          authorization: `${oauthData.token_type} ${oauthData.access_token}`,
+        },
+      });
 
-    const userData = await userResult.json();
-    setDiscordUser(userData);
+      const userData = await userResult.json();
+      setDiscordUser(userData);
+    } catch (e) {
+      Swal.fire({
+        icon: "error",
+        title: "discord error",
+        text: "디스코드 서버에 연결 할 수 없습니다.",
+      });
+    }
   };
 
   useEffect(() => {
