@@ -141,6 +141,14 @@ export const VerifyNFTHolder = () => {
           tokenId: tokenId,
           hometown: hometown,
         });
+
+        // if (i <= 0) {
+        //   imageList.push(`${baseImageUrl}${tokenId}.png`);
+        //   nftTokens.push({
+        //     tokenId: tokenId,
+        //     hometown: hometown,
+        //   });
+        // }
       }
 
       setNftImageList(imageList);
