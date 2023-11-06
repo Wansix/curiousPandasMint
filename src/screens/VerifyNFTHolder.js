@@ -8,6 +8,7 @@ import * as readContract from "../contracts/index.js";
 import Caver from "caver-js";
 import axios from "axios";
 import dotenv from "dotenv";
+import Swal from "sweetalert2";
 
 dotenv.config();
 axios.defaults.withCredentials = true;
@@ -65,7 +66,11 @@ export const VerifyNFTHolder = () => {
 
   const onClickVerifyNFTHolder = async (e) => {
     if (!account) {
-      alert("지갑 연결 해주세요");
+      Swal.fire({
+        icon: "error",
+        title: "connect wallet error",
+        text: "지갑 연결 해주세요",
+      });
       return;
     }
     if (!provider) {
@@ -104,9 +109,19 @@ export const VerifyNFTHolder = () => {
       // console.log("result : ", result.data);
       // console.log(result.data.message);
       if (result.data.success) {
-        alert(result.data.message);
+        Swal.fire({
+          icon: "success",
+          title: "verify success",
+          text: result.data.message,
+        });
+        // alert(result.data.message);
       } else {
-        alert(result.data.message); // 실패
+        // alert(result.data.message); // 실패
+        Swal.fire({
+          icon: "error",
+          title: "verify error",
+          text: result.data.message,
+        });
       }
     });
   };
