@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import WalletConnect from "../components/WalletConnect";
+import ImageList from "../components/ImageList";
 import { ethers } from "ethers";
 import * as readContract from "../contracts/index.js";
 import Caver from "caver-js";
@@ -49,6 +50,8 @@ export const VerifyNFTHolder = () => {
   const [walletName, setWalletName] = useState("");
   const [signature, setSignature] = useState("");
   const [discordUser, setDiscordUser] = useState();
+  const [nftImageList, setNftImageList] = useState([]);
+  const [nftTokens, setNftTokens] = useState([]);
 
   const handleSign = async (e) => {
     e.preventDefault();
@@ -120,6 +123,39 @@ export const VerifyNFTHolder = () => {
     setProvider(_provider);
   };
 
+  const getNFTImageList = async (_address) => {
+    // "http://curiouspandasnft.com/mintImage/1.png",
+    const baseImageUrl = `http://curiouspandasnft.com/mintImage/`;
+    if (_address) {
+      const tokens = await readContract.getPandaTokens(_address);
+      console.log("tokens : ", tokens);
+
+      const imageList = [];
+      const nftTokens = [];
+      for (let i = 0; i < tokens.length; i++) {
+        const hometown = tokens[i].pandaTokenHomeTown;
+        const tokenId = Number(tokens[i].pandaTokenId);
+
+        imageList.push(`${baseImageUrl}${tokenId}.png`);
+        nftTokens.push({
+          tokenId: tokenId,
+          hometown: hometown,
+        });
+
+        if (i <= 0) {
+          imageList.push(`${baseImageUrl}${tokenId}.png`);
+          nftTokens.push({
+            tokenId: tokenId,
+            hometown: hometown,
+          });
+        }
+      }
+
+      setNftImageList(imageList);
+      setNftTokens(nftTokens);
+    }
+  };
+
   const getDiscordUserId = async () => {
     const urlParams = new URLSearchParams(window.location.search);
     const code = urlParams.get("code");
@@ -160,6 +196,8 @@ export const VerifyNFTHolder = () => {
 
   useEffect(() => {
     readContract.initNode();
+
+    getNFTImageList(account);
   }, [account]);
 
   useEffect(() => {
@@ -167,28 +205,37 @@ export const VerifyNFTHolder = () => {
   }, []);
 
   return (
-    <div
-      style={{
-        display: "flex",
-        margin: "100px 200px",
-        flexDirection: "column",
-        backgroundColor: "beige",
-      }}
-    >
-      <a href="https://discord.com/api/oauth2/authorize?client_id=1161267960661409832&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fverify_NFT_holder&response_type=code&scope=identify">
-        ss
-      </a>
-      <WalletConnect
-        getAccount={getAccount}
-        getProvider={getProvider}
-        getWalletName={getWalletName}
-      ></WalletConnect>
-      {/* <div>
-        <Button onClick={handleSign}>Sign</Button>
-      </div> */}
-      {/* <div>{signature}</div> */}
-      <div>
-        <Button onClick={onClickVerifyNFTHolder}>NFT 홀더 인증</Button>
+    <div className="verifyNFT_main-container">
+      <div className="verifyNFT_sub-container">
+        <div className="verifyNFT-container">
+          {/* <a href="https://discord.com/api/oauth2/authorize?client_id=1161267960661409832&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fverify_NFT_holder&response_type=code&scope=identify">
+            test link
+          </a> */}
+          <div className="verifyNFT_nfts-container">
+            <ImageList images={nftImageList} nftTokens={nftTokens}></ImageList>
+          </div>
+          <div className="verifyNFT_buttons-container">
+            <div className="verifyNFT_button-container">
+              <WalletConnect
+                getAccount={getAccount}
+                getProvider={getProvider}
+                getWalletName={getWalletName}
+              ></WalletConnect>
+            </div>
+            <div className="verifyNFT_button-container">
+              <Button
+                className="wallet-connect-button"
+                variant="success"
+                onClick={onClickVerifyNFTHolder}
+              >
+                NFT 홀더 인증
+              </Button>
+            </div>
+            <div className="verifyNFT_button-container">
+              <span>지갑 연결 후 NFT 홀더 인증 버튼을 눌러 주세요.</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -137,3 +137,7 @@ export const getDatas = async () => {
 export const getMintInfo = async (_address) => {
   return await contract.getMintInfo(_address);
 };
+
+export const getPandaTokens = async (_address) => {
+  return await contract.getPandaTokens(_address);
+};
