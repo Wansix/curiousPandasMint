@@ -1,8 +1,8 @@
 import React from "react";
 
 function ImageList({ images, nftTokens }) {
-  console.log("nftTokens :", nftTokens);
-  console.log("img list : ", images);
+  // console.log("nftTokens :", nftTokens);
+  // console.log("img list : ", images);
   return (
     <div className="image-main-container">
       {images.map((image, index) => (
