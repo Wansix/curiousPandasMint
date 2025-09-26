@@ -14,8 +14,8 @@ dotenv.config();
 axios.defaults.withCredentials = true;
 
 const headers = { withCredentials: true };
-const bambooApiURL = process.env.REACT_APP_BAMBOO_API;
-// "http://localhost:8080";
+const bambooApiURL = process.env.REACT_APP_BAMBOO_API_URL;
+// const bambooApiURL = "http://localhost:8080";
 const CLIENT_ID = process.env.REACT_APP_DISCORD_CLIENT_ID; // discord bot ID
 const CLIENT_SECRET = process.env.REACT_APP_DISCORD_CLIENT_SECRET; //bot secret
 
@@ -179,7 +179,7 @@ export const VerifyNFTHolder = () => {
 
     const url = "https://discord.com/api/oauth2/token";
     const REDIRECT_URI = "https://curiouspandasnft.com/verify_NFT_holder";
-    // "http://localhost:3000/verify_NFT_holder";
+    // const redirectUri = process.env.REACT_APP_DISCORD_REDIRECT_URI;
 
     try {
       const oauthResult = await fetch(url, {
@@ -231,7 +231,7 @@ export const VerifyNFTHolder = () => {
     <div className="verifyNFT_main-container">
       <div className="verifyNFT_sub-container">
         <div className="verifyNFT-container">
-          {/* <a href="https://discord.com/api/oauth2/authorize?client_id=1161267960661409832&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fverify_NFT_holder&response_type=code&scope=identify">
+          {/* <a href={`https://discord.com/api/oauth2/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(process.env.REACT_APP_DISCORD_REDIRECT_URI)}&response_type=code&scope=identify`}>
             test link
           </a> */}
           <div className="verifyNFT_nfts-container">

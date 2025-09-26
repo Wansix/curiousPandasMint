@@ -14,8 +14,8 @@ dotenv.config();
 axios.defaults.withCredentials = true;
 
 const headers = { withCredentials: true };
-const bambooApiURL = "http://localhost:8080";
-const bambooURL = "https://pioneerlabs.gabia.io";
+const bambooApiURL = process.env.REACT_APP_BAMBOO_API_URL || "http://localhost:8080";
+const bambooURL = process.env.REACT_APP_BAMBOO_URL || "https://pioneerlabs.gabia.io";
 
 const endPoint = process.env.REACT_APP_MAINNET_ENDPOINT4;
 const caver = new Caver(endPoint);
